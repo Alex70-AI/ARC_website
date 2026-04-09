@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARC &mdash; Agents Reliability Challenge</title>
   <meta name="description"
-    content="A global online challenge where AI builders construct autonomous agents that operate in a simulated enterprise environment. Scored on reliability, compliance, and efficiency.">
+    content="A global online challenge where AI builders construct autonomous agents that operate in a simulated enterprise environment. Scored on accuracy, reliability, and efficiency.">
 
   <!-- OG / Social -->
   <meta property="og:type" content="website">
@@ -113,10 +113,9 @@
         </div>
 
         <div class="overview-card">
-          <h3>Knowing when to refuse is part of the test.</h3>
-          <p>Your agent is scored on compliance &mdash; respecting policies, role boundaries, and operational rules.
-            Some tasks require your agent to decline an action that falls outside the assigned role's authority.
-            Getting that right matters.</p>
+          <h3>Reliability and policy-awareness are scored</h3>
+          <p>The challenge tests whether your agent knows when to refuse, escalate, or ask for clarification &mdash; not
+            just whether it can complete a task.</p>
         </div>
       </div>
 
@@ -157,7 +156,7 @@
           <span class="step-badge">3</span>
           <strong class="step-row__label">Results &amp; recognition</strong>
           <span class="step-row__sep">&mdash;</span>
-          <span>Multiple leaderboards rank agents on reliability, compliance, and efficiency.</span>
+          <span>Leaderboards for reliability, compliance, and efficiency. Top solutions showcased.</span>
         </div>
       </div>
 
@@ -303,8 +302,8 @@
 
         <div class="value-point">
           <div class="value-point__title">Objective scoring</div>
-          <p>No judges deliberating over demos. The environment evaluates your agent automatically across three
-            dimensions: reliability, compliance, and efficiency. Clear targets, defensible results.</p>
+          <p>No judges, no demos. The environment evaluates your agent automatically across accuracy, reliability, and
+            efficiency.</p>
         </div>
 
         <div class="value-point">
@@ -314,8 +313,9 @@
         </div>
 
         <div class="value-point">
-          <div class="value-point__title">Recognition across multiple dimensions</div>
-          <p>Multiple leaderboards: reliability, compliance, efficiency.</p>
+          <div class="value-point__title">Recognition that matters</div>
+          <p>Multiple leaderboards and nominations: Best Agent Overall, Most Efficient Agent, Best Enterprise Team, Best
+            Student Team. Top solutions showcased.</p>
         </div>
 
         <div class="value-point">
@@ -348,12 +348,12 @@
       <!-- 7a: Three dimensions -->
       <div class="eval-dimensions">
         <div class="eval-dimension">
-          <div class="eval-dimension__label">Reliability</div>
-          <p>Did your agent produce the correct and complete result? Not just an action, but the right action with nothing missing.</p>
+          <div class="eval-dimension__label">Accuracy</div>
+          <p>Did the agent take the right actions and produce correct outcomes?</p>
         </div>
         <div class="eval-dimension">
-          <div class="eval-dimension__label">Compliance</div>
-          <p>Did your agent respect policies, role boundaries, and operational rules? Including knowing when to refuse.</p>
+          <div class="eval-dimension__label">Reliability</div>
+          <p>How consistently does the agent perform across repeated runs?</p>
         </div>
         <div class="eval-dimension">
           <div class="eval-dimension__label">Efficiency</div>
@@ -372,35 +372,24 @@
         <div class="collapsible__body">
           <div class="eval-detail-item">
             <div class="eval-detail-item__title">Reliability scoring</div>
-            <p>Reliability scoring measures whether your agent produces correct and complete results &mdash; not just
-              whether it acted, but whether it acted fully.</p>
-            <p>Submitting a notification isn't enough if the task required a notification with a RAM risk assessment.
-              Identifying a temperature transmitter isn't enough if there are two similar ones and the agent didn't
-              clarify which one the operator needs.</p>
-            <p>Reliability scoring checks outcome correctness (right records, right values, right entities) and
-              completeness (nothing required was omitted or left ambiguous).</p>
+            <p>Outcome type classification: correct action, correct refusal, correct escalation. Action correctness
+              measures whether the right records were created with the right values. Response completeness checks that
+              nothing required was omitted.</p>
           </div>
           <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Compliance scoring</div>
-            <p>Compliance scoring measures whether your agent respects policies, role boundaries, and operational
-              instructions.</p>
-            <p>If a policy restricts work order modifications to a specific role, your agent must not make that change
-              from another role's perspective &mdash; even if the task prompt asks it to.</p>
-            <p>Compliance covers correct refusals (declining unauthorized actions), correct escalations (flagging
-              requests that exceed role authority), and adherence to the procedural rules defined in the environment's
-              policy documents and SOPs.</p>
-            <p>An agent can be reliable &mdash; producing correct results &mdash; but non-compliant if it ignores role
-              boundaries to get there. Both dimensions are scored independently.</p>
+            <div class="eval-detail-item__title">Compliance</div>
+            <p>Did your agent respect policies, role boundaries, and operational rules? Including knowing when to
+              refuse.</p>
           </div>
           <div class="eval-detail-item">
             <div class="eval-detail-item__title">Efficiency scoring</div>
-            <p>Efficiency scoring measures runtime and resource consumption. Agents that brute-force their way through
-              tasks with excessive API calls are penalized. Doing more with less matters.</p>
+            <p>How much compute and cost does your agent use per task?</p>
           </div>
           <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Per-task isolation</div>
-            <p>Each task runs against an isolated snapshot of the simulated environment with a randomized operational
-              date. Your agent can't rely on memorized state across runs. Every execution is independently verifiable.</p>
+            <div class="eval-detail-item__title">Task isolation</div>
+            <p>Each task runs against an isolated environment snapshot with a predefined operational state. No data
+              leaks
+              between tasks.</p>
           </div>
         </div>
       </details>
@@ -806,8 +795,8 @@
       <div class="section-intro section-intro--bordered">
         <p>The Agents Reliability Challenge is a global online challenge where AI builders construct autonomous agents
           that operate in a simulated enterprise environment &mdash; creating records, enforcing policies, managing
-          workflows, and knowing when to refuse unauthorised actions. Agents are evaluated automatically on reliability,
-          compliance, and efficiency.</p>
+          workflows, and knowing when to refuse unauthorised actions. Agents are evaluated automatically on accuracy,
+          reliability, and efficiency.</p>
       </div>
 
       <div class="enterprise-groups">
@@ -928,8 +917,9 @@
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-item__answer">
-            <p>Your agent is scored on three dimensions: reliability (did it produce correct, complete results?),
-              compliance (did it respect policies and role boundaries?), and efficiency (how much compute did it use?).</p>
+            <p>Automatically, against built-in task criteria. Three dimensions: accuracy (correct actions and outcomes),
+              reliability (consistent performance), and efficiency (compute and API usage). No subjective judging, no
+              demos, no presentations.</p>
           </div>
         </details>
 
@@ -960,6 +950,18 @@
           </summary>
           <div class="faq-item__answer">
             <p>No. The challenge is free to enter.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" id="faq-8">
+          <summary class="faq-item__question">What do I win?
+            <span class="faq-item__question-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-item__answer">
+            <p>There's a grand prize for Best Agent Overall (composite of reliability, compliance, and efficiency) and
+              nominations for Most Efficient Agent, Best Enterprise Team, and Best Student Team. Top participants may
+              also be featured in solution showcases and invited to publish their approach. <a href="#evaluation">See
+                the evaluation section</a> for details.</p>
           </div>
         </details>
 
