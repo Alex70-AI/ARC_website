@@ -1,5 +1,6 @@
 /* responsive.css — Media queries (mobile-first breakpoints) */
 
+
 /* ── Phone only — smaller buttons (max 767px) ────────────────────────────── */
 
 @media (max-width: 767px) {
@@ -96,6 +97,20 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  /* Section 4a — How It Works: 3-column card grid on tablet+ */
+  .steps-list {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .step-card {
+    flex: 1;
+  }
+
+  .step-card__desc {
+    padding-left: 0; /* no indent needed — cards have their own padding */
+  }
+
   /* Section 4d — timeline horizontal */
   .timeline {
     flex-direction: row;
@@ -114,27 +129,15 @@
     margin-top: 0;
   }
 
-  /* Section 7c — nominations wrap */
+  /* Section 7c — nominations: 2-column grid on tablet */
   .nominations {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    padding-right: 0;
-    mask-image: none;
-    -webkit-mask-image: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   /* Partner logos */
   .partner-logo {
     height: 48px;
-  }
-
-  /* Eval dimensions — 3-column on desktop */
-  .eval-dimensions {
-    flex-direction: row;
-  }
-
-  .eval-dimension {
-    flex: 1;
   }
 
   /* Enterprise groups */
@@ -204,6 +207,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
+  }
+
+  /* Eval dimensions — 3-column row on desktop only */
+  .eval-dimensions {
+    flex-direction: row;
+  }
+
+  .eval-dimension {
+    flex: 1;
+  }
+
+  /* Nominations — 4-column row on desktop */
+  .nominations {
+    grid-template-columns: repeat(4, 1fr);
   }
 
 }
