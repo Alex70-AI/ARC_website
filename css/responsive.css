@@ -1,0 +1,265 @@
+/* responsive.css — Media queries (mobile-first breakpoints) */
+
+/* ── Phone only — smaller buttons (max 767px) ────────────────────────────── */
+
+@media (max-width: 767px) {
+
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--text-sm);
+    min-height: 38px;
+  }
+
+  /* ── Registration form — compact mobile layout ── */
+
+  .section--form .section__heading {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section--form .section__subtext {
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+  }
+
+  .json-workflow {
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .json-workflow__title {
+    margin-bottom: 0.125rem;
+    font-size: var(--text-sm);
+  }
+
+  .reg-form {
+    gap: var(--space-md);
+  }
+
+  .form-field input[type="text"],
+  .form-field input[type="email"],
+  .form-field input[type="password"],
+  .form-field select {
+    min-height: 40px;
+    padding: 0.5rem 0.75rem;
+  }
+
+}
+
+/* ── 480px — large mobile / small tablet ─────────────────────────────────── */
+
+@media (min-width: 480px) {
+
+  h1 { font-size: var(--text-4xl); }
+
+  .post-register-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+}
+
+/* ── 768px — tablet / desktop switch ────────────────────────────────────── */
+
+@media (min-width: 768px) {
+
+  /* Typography */
+  h1 { font-size: var(--text-5xl); }
+  h2 { font-size: var(--text-3xl); }
+
+  /* Sections */
+  .section {
+    padding: var(--section-padding-desktop);
+  }
+
+  .hero {
+    padding: var(--space-3xl) var(--space-xl);
+    padding-top: calc(var(--header-height) + var(--space-3xl));
+  }
+
+  /* Header nav */
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  /* Section 3a — 2×2 grid */
+  .overview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Section 4a — steps horizontal */
+  .steps {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .step {
+    flex-direction: column;
+    flex: 1;
+    gap: var(--space-sm);
+  }
+
+  .step__number {
+    margin-top: 0;
+  }
+
+  /* Section 4d — timeline horizontal */
+  .timeline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    min-width: 160px;
+  }
+
+  .timeline-item__dot {
+    margin-top: 0;
+  }
+
+  /* Section 7c — nominations wrap */
+  .nominations {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  /* Partner logos */
+  .partner-logo {
+    height: 48px;
+  }
+
+  /* Eval dimensions — 3-column on desktop */
+  .eval-dimensions {
+    flex-direction: row;
+  }
+
+  .eval-dimension {
+    flex: 1;
+  }
+
+  /* Enterprise groups */
+  .enterprise-groups {
+    flex-direction: row;
+    gap: var(--space-xl);
+  }
+
+  .enterprise-group {
+    flex: 1;
+  }
+
+  /* Activation links */
+  .activation-links {
+    flex-direction: row;
+  }
+
+  .activation-link {
+    flex: 1;
+  }
+
+  /* Footer */
+  .footer__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* Post register links */
+  .post-register-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+}
+
+/* ── 1024px — wide desktop ───────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+
+  .container {
+    padding-inline: var(--space-xl);
+  }
+
+  .header__inner {
+    padding-inline: var(--space-xl);
+  }
+
+  .hero {
+    padding: var(--space-3xl) var(--space-xl);
+    padding-top: calc(var(--header-height) + var(--space-3xl));
+  }
+
+  .hero h1 {
+    max-width: 800px;
+  }
+
+  .hero__subline {
+    max-width: 580px;
+  }
+
+  /* Value points — 2-column grid on large desktop */
+  .value-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+}
+
+/* ── Landscape phone — short viewport fix ────────────────────────────────── */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  :root {
+    --header-height: 48px;
+  }
+
+  .site-header {
+    height: 48px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    justify-content: center;
+    padding: var(--space-md) var(--space-md);
+    padding-top: calc(48px + var(--space-sm));
+    padding-bottom: var(--space-md);
+    overflow: hidden;
+  }
+
+  h1 { font-size: var(--text-2xl); }
+
+  .hero__subline {
+    margin-top: var(--space-sm) !important;
+    margin-bottom: var(--space-md) !important;
+    font-size: var(--text-sm);
+  }
+
+}
+
+/* ── 1280px — max content width ──────────────────────────────────────────── */
+
+@media (min-width: 1280px) {
+
+  .section {
+    padding-inline: var(--space-3xl);
+  }
+
+  .hero {
+    padding-inline: var(--space-3xl);
+  }
+
+}
