@@ -15,16 +15,6 @@ let loadedRegistrations = null;
 let loadedFileName = 'registrations.json';
 let lastRegistrationIntent = null;
 
-const SECTION_LABELS = {
-  'how-it-works': 'how_it_works',
-  builders: 'builders',
-  register: 'register_primary',
-  evaluation: 'evaluation',
-  industry: 'industry',
-  faq: 'faq',
-  'register-secondary': 'register_secondary',
-};
-
 function validateForm(form) {
   let valid = true;
   form.querySelectorAll('[name]').forEach(field => {
@@ -40,12 +30,6 @@ function validateForm(form) {
   return valid;
 }
 
-function getSource() {
-  return typeof window.getAttributionSource === 'function'
-    ? window.getAttributionSource()
-    : 'direct';
-}
-
 function buildRecord(form, instance) {
   const fd = new FormData(form);
   const intent = getRegistrationIntent(instance);
@@ -55,35 +39,14 @@ function buildRecord(form, instance) {
     email: (fd.get('email') || '').toLowerCase().trim(),
     password: fd.get('password') || null,
     country: fd.get('country') || null,
+    cta_button_id: intent.cta_button_id,
+    team_vs_individual: null,
+    audience_segment: null,
+    experience_level: null,
     consent_given: !!form.querySelector('[name="consent"]').checked,
     registered_at: new Date().toISOString(),
-    registration_source: getSource(),
     cta_source: intent.cta_source,
-    cta_button_text: intent.cta_button_text,
-    cta_section_owner: intent.cta_section_owner,
-    cta_target_form: intent.cta_target_form,
-    cta_section_context: intent.cta_section_context,
-    cta_clicked_at: intent.cta_clicked_at,
   };
-}
-
-function getCurrentSectionContext() {
-  const probeY = window.scrollY + (window.innerHeight * 0.35);
-  let bestId = 'top';
-  let bestTop = -Infinity;
-
-  Object.keys(SECTION_LABELS).forEach((id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const top = el.offsetTop;
-    if (top <= probeY && top > bestTop) {
-      bestTop = top;
-      bestId = id;
-    }
-  });
-
-  if (bestId === 'top') return 'header';
-  return SECTION_LABELS[bestId] || bestId;
 }
 
 function normaliseText(value) {
@@ -107,58 +70,26 @@ function resolveCtaSource(link) {
   return null;
 }
 
-function resolveSectionOwner(link) {
-  const section = link.closest('section[id], header, footer');
-  if (!section) return 'page';
-  if (section.tagName.toLowerCase() === 'header') return 'header';
-
-  const id = section.id;
-  if (id === 'how-it-works') return 'how_it_works';
-  if (id === 'builders') return 'builders';
-  if (id === 'evaluation') return 'evaluation';
-  if (id === 'industry') return 'industry';
-  if (id === 'faq') return 'faq';
-  if (id === 'register') return 'register_primary';
-  if (id === 'register-secondary') return 'register_secondary';
-  return id || 'page';
-}
-
-function resolveTargetForm(link) {
-  const href = link.getAttribute('href');
-  if (href === '#register') return 'primary';
-  if (href === '#register-secondary') return 'secondary';
-  return null;
-}
-
-function resolveButtonText(link) {
-  return (link.textContent || '')
-    .replace(/\s+/g, ' ')
-    .trim();
+function resolveCtaButtonId(link) {
+  return (link.dataset.ctaId || '').trim() || null;
 }
 
 function captureRegistrationIntent(link) {
   const ctaSource = resolveCtaSource(link);
-  if (!ctaSource) return;
+  const ctaButtonId = resolveCtaButtonId(link);
+  if (!ctaSource && !ctaButtonId) return;
 
   lastRegistrationIntent = {
+    cta_button_id: ctaButtonId,
     cta_source: ctaSource,
-    cta_button_text: resolveButtonText(link),
-    cta_section_owner: resolveSectionOwner(link),
-    cta_target_form: resolveTargetForm(link),
-    cta_section_context: getCurrentSectionContext(),
-    cta_clicked_at: new Date().toISOString(),
   };
 }
 
 function getRegistrationIntent(instance) {
   if (lastRegistrationIntent) return lastRegistrationIntent;
   return {
+    cta_button_id: instance === 'primary' ? 'direct_submit_primary' : 'direct_submit_secondary',
     cta_source: instance === 'primary' ? 'direct_form_primary' : 'direct_form_secondary',
-    cta_button_text: 'Register',
-    cta_section_owner: instance === 'primary' ? 'register_primary' : 'register_secondary',
-    cta_target_form: instance,
-    cta_section_context: getCurrentSectionContext(),
-    cta_clicked_at: null,
   };
 }
 

@@ -7,7 +7,7 @@
   .btn {
     padding: 0.625rem 1.25rem;
     font-size: var(--text-sm);
-    min-height: 38px;
+    min-height: 44px;
   }
 
   /* ── Registration form — compact mobile layout ── */
@@ -39,7 +39,7 @@
   .form-field input[type="email"],
   .form-field input[type="password"],
   .form-field select {
-    min-height: 40px;
+    min-height: 44px;
     padding: 0.5rem 0.75rem;
   }
 
@@ -64,7 +64,7 @@
 
   /* Typography */
   h1 { font-size: var(--text-5xl); }
-  h2 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-4xl); }
 
   /* Sections */
   .section {
@@ -96,22 +96,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Section 4a — steps horizontal */
-  .steps {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .step {
-    flex-direction: column;
-    flex: 1;
-    gap: var(--space-sm);
-  }
-
-  .step__number {
-    margin-top: 0;
-  }
-
   /* Section 4d — timeline horizontal */
   .timeline {
     flex-direction: row;
@@ -134,6 +118,9 @@
   .nominations {
     flex-wrap: wrap;
     overflow-x: visible;
+    padding-right: 0;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   /* Partner logos */
@@ -188,6 +175,8 @@
 /* ── 1024px — wide desktop ───────────────────────────────────────────────── */
 
 @media (min-width: 1024px) {
+
+  h1 { font-size: var(--text-6xl); }
 
   .container {
     padding-inline: var(--space-xl);

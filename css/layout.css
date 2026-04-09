@@ -28,20 +28,35 @@
   background-color: var(--color-surface);
 }
 
+/* Section density variants — use on top-level sections to vary breathing room */
+.section--tight {
+  padding-block: var(--space-2xl); /* 48px — for dense-content sections (FAQ, eval details) */
+}
+
+.section--airy {
+  padding-block: var(--space-3xl); /* 64px — already the desktop default, but explicit */
+}
+
+@media (min-width: 768px) {
+  .section--airy {
+    padding-block: 5rem; /* 80px — more air on desktop for hero-adjacent sections */
+  }
+}
+
 .section--dark {
-  background-color: #0d0d0d;
-  color: #ffffff;
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
 }
 
 .section--dark h1,
 .section--dark h2,
 .section--dark h3,
 .section--dark h4 {
-  color: #ffffff;
+  color: var(--color-dark-text);
 }
 
 .section--dark .section__subtext {
-  color: #aaaaaa;
+  color: var(--color-dark-text-muted);
 }
 
 /* ── Hero ────────────────────────────────────────────────────────────────── */
@@ -55,6 +70,11 @@
   padding-top: calc(var(--header-height) + var(--space-2xl));
 }
 
+.hero__subline {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
 /* ── Section 3a — 2×2 overview grid ─────────────────────────────────────── */
 
 .overview-grid {
@@ -64,28 +84,51 @@
   margin-bottom: var(--space-xl);
 }
 
+.overview-card {
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+.overview-card h3 {
+  margin-bottom: var(--space-xs);
+}
+
 /* ── Section 4a — How It Works steps ────────────────────────────────────── */
 
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
+.steps-list {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-2xl);
 }
 
-.step {
+.step-row {
   display: flex;
-  gap: var(--space-md);
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
-.step__number {
+.step-row:last-child {
+  margin-bottom: 0;
+}
+
+.step-row__label {
+  font-weight: 600;
+}
+
+.step-row__sep {
+  color: var(--color-text-muted);
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
+}
+
+.step-badge {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
   background-color: var(--color-primary);
   color: #ffffff;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
@@ -93,13 +136,73 @@
   margin-top: 2px;
 }
 
-.step__content {
-  flex: 1;
+/* ── Section 4a — Lead paragraph (large intro under section heading) ─────── */
+
+.section-lead {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xl);
 }
 
-.step__title {
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
+/* ── Section 4b — Subsection headings & domain note ─────────────────────── */
+
+.subsection-heading {
+  margin-bottom: var(--space-md);
+}
+
+.domain-note {
+  margin: 0 0 var(--space-2xl);
+}
+
+/* ── Section 4b — Logistics bar ─────────────────────────────────────────── */
+
+.logistics-bar {
+  margin-bottom: var(--space-xl);
+  margin-top: var(--space-2xl);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.logistics-bar__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+}
+
+.logistics-bar__label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.logistics-bar__value {
+  font-size: var(--text-sm);
+}
+
+/* ── Section 4b — Pipeline strip ────────────────────────────────────────── */
+
+.pipeline-strip {
+  background: var(--color-surface, #f5f5f5);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted, #555);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Section 4b — Compliance callout ────────────────────────────────────── */
+
+.compliance-callout {
+  border-left: 5px solid var(--color-primary);
+  background: rgba(0, 87, 255, 0.04);
+  padding: var(--space-md) var(--space-lg);
+  margin: 0 0 var(--space-md);
+  font-size: var(--text-base);
 }
 
 /* ── Section 4d — Key dates timeline ────────────────────────────────────── */
@@ -119,11 +222,11 @@
 
 .timeline-item__dot {
   flex-shrink: 0;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .timeline-item__label {
@@ -148,7 +251,7 @@
   padding: var(--space-lg);
   background: var(--color-surface);
   border-radius: 8px;
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-accent-line);
 }
 
 .value-point__title {
@@ -163,8 +266,11 @@
   gap: var(--space-sm);
   overflow-x: auto;
   padding-bottom: var(--space-sm);
+  padding-right: var(--space-xl);
   margin-top: var(--space-lg);
   -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
 }
 
 .nomination-badge {
@@ -189,7 +295,16 @@
   padding: var(--space-xl) var(--space-md);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, #31424b 0%, #2a3840 100%);
+  background: var(--color-dark-bg);
+}
+
+.partner-bar__heading {
+  text-align: center;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-md);
 }
 
 .partner-logos {
@@ -211,8 +326,8 @@
   justify-content: center;
   padding: 0.5rem 0.75rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .partner-logo {
@@ -248,17 +363,17 @@
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
 .footer {
-  background-color: #111111;
-  color: #cccccc;
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text-muted);
   padding: var(--space-2xl) var(--space-md);
 }
 
 .footer a {
-  color: #aaaaaa;
+  color: var(--color-dark-text-muted);
 }
 
 .footer a:hover {
-  color: #ffffff;
+  color: var(--color-dark-text);
 }
 
 .footer__inner {
@@ -272,7 +387,12 @@
 .footer__brand {
   font-weight: 700;
   font-size: var(--text-lg);
-  color: #ffffff;
+  color: var(--color-dark-text);
+}
+
+.footer__tagline {
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
 }
 
 .footer__social {
@@ -295,7 +415,7 @@
 
 .footer__copy {
   font-size: var(--text-xs);
-  color: #666666;
+  color: var(--color-dark-text-subtle);
 }
 
 /* ── Activation links ────────────────────────────────────────────────────── */
@@ -366,6 +486,12 @@
   font-weight: 600;
 }
 
+.cta-note {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
 /* ── Section intro text (enterprise orienting block, etc.) ───────────────── */
 
 .section-intro {
@@ -374,14 +500,14 @@
 }
 
 .section-intro--bordered {
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-accent-line);
   padding-left: var(--space-md);
 }
 
 /* ── Overview block 3b — problem statement ───────────────────────────────── */
 
 .problem-statement {
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-accent-line);
   padding-left: var(--space-md);
   margin-top: var(--space-xl);
   color: var(--color-text-muted);

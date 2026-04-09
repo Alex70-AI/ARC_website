@@ -6,22 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARC &mdash; Agents Reliability Challenge</title>
   <meta name="description"
-    content="A global online challenge where AI builders construct autonomous agents that operate in a simulated enterprise environment. Scored on accuracy, reliability, and efficiency.">
+    content="A global online challenge where AI builders construct autonomous agents that operate in a simulated enterprise environment. Scored on reliability, compliance, and efficiency.">
 
   <!-- OG / Social -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="ARC &mdash; Agents Reliability Challenge">
   <meta property="og:description"
-    content="Build an agent that doesn't just do what it can &mdash; but knows what it should. Online. Free. Any framework.">
+    content="Build an agent that can act; and knows when it shouldn't. Online. Free. Any framework.">
   <meta property="og:url" content="https://ai-agents-challenge.digital/">
   <meta property="og:image" content="https://ai-agents-challenge.digital/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ARC &mdash; Agents Reliability Challenge">
-  <meta name="twitter:description"
-    content="Build an agent that doesn't just do what it can &mdash; but knows what it should.">
+  <meta name="twitter:description" content="Build an agent that can act; and knows when it shouldn't.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://ai-agents-challenge.digital/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
@@ -32,7 +38,7 @@
 
 <body>
 
-  <!-- SECTION 1 - HUY STICKY HEADER / NAV -->
+  <!-- SECTION 1 - STICKY HEADER / NAV -->
   <header class="site-header">
     <div class="header__inner">
 
@@ -45,13 +51,14 @@
       <nav class="header__nav" aria-label="Main navigation">
         <a href="#how-it-works">How It Works</a>
         <a href="#builders">For AI Builders</a>
-        <a href="#industry">For Industry</a>
+        <a href="#industry">For Enterprise Teams</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <!-- Actions: Register button (always visible) + hamburger -->
       <div class="header__actions">
-        <a href="#register" class="btn btn--primary nav-register-btn" data-track="nav_register_click">
+        <a href="#register" class="btn btn--primary nav-register-btn" data-track="nav_register_click"
+          data-cta-id="header_register_primary">
           Register
         </a>
         <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
@@ -66,18 +73,17 @@
   <nav id="mobile-nav" class="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
     <a href="#how-it-works">How It Works</a>
     <a href="#builders">For AI Builders</a>
-    <a href="#industry">For Industry</a>
+    <a href="#industry">For Enterprise Teams</a>
     <a href="#faq">FAQ</a>
   </nav>
 
   <!-- SECTION 2 - HERO -->
   <section class="hero section--dark">
     <div class="container">
-      <h1>Build an agent that knows<br>what it <em>should</em> do &mdash; not just what it <em>can</em>.</h1>
-      <p class="hero__subline text-muted" style="color:#aaaaaa; margin-top:1.5rem; margin-bottom:2rem;">
-        Construct an autonomous agent that operates in a simulated enterprise environment,
-        takes real actions, and is scored on correctness, reliability, and policy compliance.
-        No domain expertise required.
+      <h1>Build an agent that can act<br>&mdash; and knows when it shouldn&rsquo;t.</h1>
+      <p class="hero__subline text-muted">
+        Test it in a simulated enterprise environment &mdash; using APIs, updating records, enforcing policies, and
+        knowing when not to act.
       </p>
     </div>
   </section>
@@ -85,41 +91,40 @@
   <!-- SECTION 3 - CHALLENGE OVERVIEW (What Is This) -->
   <section class="section">
     <div class="container">
-      <h2 class="section__heading">What is ARC?</h2>
+      <h2 class="section__heading">Why ARC Is Different</h2>
 
       <div class="overview-grid">
-        <div class="overview-card" style="padding:1.5rem; background:var(--color-surface); border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">Realistic enterprise environment</h3>
+        <div class="overview-card">
+          <h3>Realistic enterprise environment</h3>
           <p>Agents interact with structured APIs, create records, and mutate state in a simulated business system. Not
             a prompt benchmark.</p>
         </div>
 
-        <div class="overview-card" style="padding:1.5rem; background:var(--color-surface); border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">No domain expertise needed</h3>
+        <div class="overview-card">
+          <h3>No domain expertise needed</h3>
           <p>The environment and a curated knowledge base provide everything the agent needs. Designed for AI builders
             from any background.</p>
         </div>
 
-        <div class="overview-card" style="padding:1.5rem; background:var(--color-surface); border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">Built-in, scored evaluation</h3>
+        <div class="overview-card">
+          <h3>Built-in, scored evaluation</h3>
           <p>Success is measured by what the agent does &mdash; actions taken, records created, policies respected. Not
             by demos or presentations.</p>
         </div>
 
-        <div class="overview-card" style="padding:1.5rem; background:var(--color-surface); border-radius:8px;">
-          <h3 style="margin-bottom:0.5rem;">Reliability and policy-awareness are scored</h3>
-          <p>The challenge tests whether your agent knows when to refuse, escalate, or ask for clarification &mdash; not
-            just whether it can complete a task.</p>
+        <div class="overview-card">
+          <h3>Knowing when to refuse is part of the test.</h3>
+          <p>Your agent is scored on compliance &mdash; respecting policies, role boundaries, and operational rules.
+            Some tasks require your agent to decline an action that falls outside the assigned role's authority.
+            Getting that right matters.</p>
         </div>
       </div>
 
       <div class="problem-statement">
         <p>
-          Frontier AI builders ship capable agents for sectors with mature digital infrastructure
-          but have almost no exposure to the complex, policy-heavy environments that heavy industry
-          operates in. Industry teams can't close this gap alone &mdash; they lack access to the methods
-          and evaluation discipline that make agent deployment credible. This challenge bridges
-          both worlds in a structured, short, high-signal engagement.
+          Strong agent builders rarely get to test against policy-heavy enterprise systems.
+          Enterprise teams rarely get credible evidence of what modern agents can do.
+          This challenge bridges both worlds in a structured, short, high-signal engagement.
         </p>
       </div>
     </div>
@@ -130,61 +135,79 @@
     <div class="container">
       <h2 class="section__heading">How It Works</h2>
 
-      <div class="steps">
-        <div class="step">
-          <div class="step__number">1</div>
-          <div class="step__content">
-            <div class="step__title">Register &amp; warm up (~2 weeks)</div>
-            <p>Access a smaller test environment. Complete introductory tasks. Familiarise yourself with the API, SDK,
-              and evaluation mechanics. Progressive difficulty &mdash; no prior domain knowledge needed.</p>
-          </div>
-        </div>
+      <!-- Context line -->
+      <p class="section-lead">Your agent operates in a simulated
+        enterprise system through a REST API &mdash; taking real actions that are scored automatically.</p>
 
-        <div class="step">
-          <div class="step__number">2</div>
-          <div class="step__content">
-            <div class="step__title">Main challenge (1 day, ~2&ndash;4 hours)</div>
-            <p>Solve a set of tasks in the full simulated environment. Your agent is scored automatically &mdash; no
-              demos, no judges, no presentations.</p>
-          </div>
+      <!-- Step cards: stacked horizontal rows -->
+      <div class="steps-list">
+        <div class="step-row">
+          <span class="step-badge">1</span>
+          <strong class="step-row__label">Registration &amp; Onboarding</strong>
+          <span class="step-row__sep">&mdash;</span>
+          <span>Complete introductory tasks in a test environment at your own pace (~2 weeks).</span>
         </div>
-
-        <div class="step">
-          <div class="step__number">3</div>
-          <div class="step__content">
-            <div class="step__title">Results &amp; recognition</div>
-            <p>Multiple leaderboards: accuracy, reliability, efficiency. Special nominations. Top solutions showcased.
-              Open to individuals and teams.</p>
-          </div>
+        <div class="step-row">
+          <span class="step-badge">2</span>
+          <strong class="step-row__label">Main challenge</strong>
+          <span class="step-row__sep">&mdash;</span>
+          <span>Solve tasks in the full environment. Scored automatically. Done in 1 day (2-6 hours).</span>
+        </div>
+        <div class="step-row">
+          <span class="step-badge">3</span>
+          <strong class="step-row__label">Results &amp; recognition</strong>
+          <span class="step-row__sep">&mdash;</span>
+          <span>Multiple leaderboards rank agents on reliability, compliance, and efficiency.</span>
         </div>
       </div>
 
-      <div style="margin-bottom:2rem;">
-        <h3 style="margin-bottom:1rem;">What your agent actually does</h3>
-        <p>
-          Your agent receives tasks with an assigned role &mdash; engineer, technician, supervisor, or planner.
-          It interacts with enterprise systems through a REST API: creating records, updating work orders,
-          checking inventory, and enforcing policies. It must operate within the permissions of the assigned role.
-        </p>
-        <p>
+      <!-- 4b: What your agent actually does -->
+      <div>
+        <h3 class="subsection-heading">What your agent actually does</h3>
+
+        <!-- Pipeline strip -->
+        <div class="pipeline-strip">
+          Receives task with assigned role &rarr; Interacts via REST API &rarr; Takes actions &rarr; Must stay within
+          role permissions
+        </div>
+
+        <!-- Compliance callout -->
+        <div class="compliance-callout">
           Some tasks require the agent to <strong>refuse</strong> an action &mdash; because it falls outside role
-          authority.
-          Knowing when not to act is part of the score.
-        </p>
-        <p style="color:var(--color-text-muted); font-size:0.9375rem;">
+          authority. Knowing when not to act is part of the score.
+        </div>
+
+        <!-- Domain reveal -->
+        <p class="domain-note">
           The simulated environment is an operations &amp; maintenance system &mdash; but you don't need to know
-          anything
-          about the industry. The knowledge base and standard operating procedures are provided.
+          anything about the industry. The knowledge base and standard operating procedures are provided.
         </p>
       </div>
 
-      <div
-        style="margin-bottom:2rem; padding:1.25rem; background:var(--color-bg); border:1px solid var(--color-border); border-radius:8px; font-size:0.9375rem;">
-        <strong>Format:</strong> Online &nbsp;&middot;&nbsp;
-        <strong>Access:</strong> Worldwide &nbsp;&middot;&nbsp;
-        <strong>Teams or individuals</strong> &nbsp;&middot;&nbsp;
-        <strong>Any language / framework</strong> &nbsp;&middot;&nbsp;
-        <strong>Python SDK provided</strong>
+      <!-- Logistics bar as label–value pairs -->
+      <div class="logistics-bar">
+        <div class="logistics-bar__items">
+          <div>
+            <div class="logistics-bar__label">Format</div>
+            <div class="logistics-bar__value">Online</div>
+          </div>
+          <div>
+            <div class="logistics-bar__label">Access</div>
+            <div class="logistics-bar__value">Worldwide</div>
+          </div>
+          <div>
+            <div class="logistics-bar__label">Teams</div>
+            <div class="logistics-bar__value">Individuals or teams</div>
+          </div>
+          <div>
+            <div class="logistics-bar__label">Stack</div>
+            <div class="logistics-bar__value">Any language / framework</div>
+          </div>
+          <div>
+            <div class="logistics-bar__label">Tooling</div>
+            <div class="logistics-bar__value">Python SDK provided</div>
+          </div>
+        </div>
       </div>
 
       <details class="collapsible" id="task-examples">
@@ -224,8 +247,8 @@
         </div>
       </details>
 
-      <div style="margin-top:2.5rem;">
-        <h3 style="margin-bottom:1rem;">Key Dates</h3>
+      <div class="mt-section">
+        <h3 class="subsection-heading">Key Dates</h3>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-item__dot"></div>
@@ -259,9 +282,7 @@
             </div>
           </div>
         </div>
-        <p style="margin-top:1rem; font-size:0.875rem; color:var(--color-text-muted);">
-          Exact dates announced soon &mdash; <a href="#register">register now</a> to be notified.
-        </p>
+
       </div>
     </div>
   </section>
@@ -282,8 +303,8 @@
 
         <div class="value-point">
           <div class="value-point__title">Objective scoring</div>
-          <p>No judges, no demos. The environment evaluates your agent automatically across accuracy, reliability, and
-            efficiency.</p>
+          <p>No judges deliberating over demos. The environment evaluates your agent automatically across three
+            dimensions: reliability, compliance, and efficiency. Clear targets, defensible results.</p>
         </div>
 
         <div class="value-point">
@@ -293,26 +314,25 @@
         </div>
 
         <div class="value-point">
-          <div class="value-point__title">Recognition that matters</div>
-          <p>Multiple leaderboards and special nominations: Safest Agent, Most Reliable, Most Efficient, Best Enterprise
-            Team, Breakthrough Newcomer. Top solutions showcased.</p>
+          <div class="value-point__title">Recognition across multiple dimensions</div>
+          <p>Multiple leaderboards: reliability, compliance, efficiency.</p>
         </div>
 
         <div class="value-point">
-          <div class="value-point__title">Portfolio signal</div>
+          <div class="value-point__title">Capabilities signal</div>
           <p>A completed submission demonstrates you can build an enterprise-grade agent &mdash; not just a chatbot
             demo. A credible signal for roles where enterprise context matters.</p>
         </div>
 
         <div class="value-point">
-          <div class="value-point__title">Beyond prizes</div>
+          <div class="value-point__title">Beyond the Leaderboards</div>
           <p>Top participants may be featured in solution showcases, invited to publish their approach, or connected
             with organisations exploring enterprise agent deployment.</p>
         </div>
 
       </div>
 
-      <p style="margin-top:1.5rem; color:var(--color-text-muted); font-size:0.9375rem;">
+      <p class="text-muted mt-section">
         Prizes and recognition for top performers. Free to enter.
       </p>
 
@@ -320,12 +340,99 @@
   </section>
 
 
+  <!-- SECTION 7 &mdash; EVALUATION & SCORING -->
+  <section id="evaluation" class="section">
+    <div class="container">
+      <h2 class="section__heading">Evaluation &amp; Scoring</h2>
+
+      <!-- 7a: Three dimensions -->
+      <div class="eval-dimensions">
+        <div class="eval-dimension">
+          <div class="eval-dimension__label">Reliability</div>
+          <p>Did your agent produce the correct and complete result? Not just an action, but the right action with nothing missing.</p>
+        </div>
+        <div class="eval-dimension">
+          <div class="eval-dimension__label">Compliance</div>
+          <p>Did your agent respect policies, role boundaries, and operational rules? Including knowing when to refuse.</p>
+        </div>
+        <div class="eval-dimension">
+          <div class="eval-dimension__label">Efficiency</div>
+          <p>How much compute and cost does the agent use per task?</p>
+        </div>
+      </div>
+
+      <p class="domain-note">The environment evaluates your agent automatically. No subjective judging.</p>
+
+      <!-- 7b: Detailed criteria &mdash; collapsible -->
+      <details class="collapsible" id="eval-detail">
+        <summary class="collapsible__trigger">
+          See how scoring works
+          <span class="collapsible__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="collapsible__body">
+          <div class="eval-detail-item">
+            <div class="eval-detail-item__title">Reliability scoring</div>
+            <p>Reliability scoring measures whether your agent produces correct and complete results &mdash; not just
+              whether it acted, but whether it acted fully.</p>
+            <p>Submitting a notification isn't enough if the task required a notification with a RAM risk assessment.
+              Identifying a temperature transmitter isn't enough if there are two similar ones and the agent didn't
+              clarify which one the operator needs.</p>
+            <p>Reliability scoring checks outcome correctness (right records, right values, right entities) and
+              completeness (nothing required was omitted or left ambiguous).</p>
+          </div>
+          <div class="eval-detail-item">
+            <div class="eval-detail-item__title">Compliance scoring</div>
+            <p>Compliance scoring measures whether your agent respects policies, role boundaries, and operational
+              instructions.</p>
+            <p>If a policy restricts work order modifications to a specific role, your agent must not make that change
+              from another role's perspective &mdash; even if the task prompt asks it to.</p>
+            <p>Compliance covers correct refusals (declining unauthorized actions), correct escalations (flagging
+              requests that exceed role authority), and adherence to the procedural rules defined in the environment's
+              policy documents and SOPs.</p>
+            <p>An agent can be reliable &mdash; producing correct results &mdash; but non-compliant if it ignores role
+              boundaries to get there. Both dimensions are scored independently.</p>
+          </div>
+          <div class="eval-detail-item">
+            <div class="eval-detail-item__title">Efficiency scoring</div>
+            <p>Efficiency scoring measures runtime and resource consumption. Agents that brute-force their way through
+              tasks with excessive API calls are penalized. Doing more with less matters.</p>
+          </div>
+          <div class="eval-detail-item">
+            <div class="eval-detail-item__title">Per-task isolation</div>
+            <p>Each task runs against an isolated snapshot of the simulated environment with a randomized operational
+              date. Your agent can't rely on memorized state across runs. Every execution is independently verifiable.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 7c: Special nominations -->
+      <div class="mt-section">
+        <h3 class="subsection-heading">Special Nominations</h3>
+        <div class="nominations">
+          <div class="nomination-badge"><strong>Best Agent Overall</strong> &mdash; Highest composite score across
+            reliability, compliance, and efficiency. The grand prize.</div>
+          <div class="nomination-badge"><strong>Most Efficient Agent</strong> &mdash; Best performance per unit of
+            compute and cost. For builders who optimize hard.</div>
+          <div class="nomination-badge"><strong>Best Enterprise Team</strong> &mdash; Strongest submission from an
+            in-house industry team. Proof that enterprise practitioners can compete with the global AI community.</div>
+          <div class="nomination-badge"><strong>Best Student Team</strong> &mdash; Strongest submission from a student
+            team. New to the field doesn't mean out of the running.</div>
+        </div>
+      </div>
+
+      <!-- 7d: Soft CTA -->
+      <p class="soft-cta">Seen enough? <a href="#register" data-cta-id="evaluation_register_primary">Register now
+          &#8594;</a></p>
+
+    </div>
+  </section>
+
+
   <!-- SECTION 6 &mdash; REGISTRATION FORM (PRIMARY) -->
-  <section id="register" class="section section--form">
+  <section id="register" class="section section--form section--airy">
     <div class="container">
       <h2 class="section__heading">Ready to test your agent?</h2>
-      <p class="section__subtext">Free to enter. Any framework, any language. Warm-up starts when dates are confirmed
-        &mdash; register now to be notified.</p>
+      <p class="section__subtext">Free to enter. Any framework. Start with Onboarding and build from there.</p>
 
       <div class="json-workflow" aria-live="polite">
         <p class="json-workflow__title">Local JSON workflow</p>
@@ -665,80 +772,9 @@
   </section>
 
 
-  <!-- SECTION 7 &mdash; EVALUATION & SCORING -->
-  <section id="evaluation" class="section">
-    <div class="container">
-      <h2 class="section__heading">Evaluation &amp; Scoring</h2>
-
-      <!-- 7a: Three dimensions -->
-      <div class="eval-dimensions">
-        <div class="eval-dimension">
-          <div class="eval-dimension__label">Accuracy</div>
-          <p>Did the agent take the right actions and produce correct outcomes?</p>
-        </div>
-        <div class="eval-dimension">
-          <div class="eval-dimension__label">Reliability</div>
-          <p>How consistently does the agent perform across repeated runs?</p>
-        </div>
-        <div class="eval-dimension">
-          <div class="eval-dimension__label">Efficiency</div>
-          <p>How much compute and cost does the agent use per task?</p>
-        </div>
-      </div>
-
-      <p style="margin-bottom:2rem;">The environment evaluates your agent automatically. No subjective judging.</p>
-
-      <!-- 7b: Detailed criteria &mdash; collapsible -->
-      <details class="collapsible" id="eval-detail">
-        <summary class="collapsible__trigger">
-          See how scoring works
-          <span class="collapsible__icon" aria-hidden="true"></span>
-        </summary>
-        <div class="collapsible__body">
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Accuracy scoring</div>
-            <p>Outcome type classification: correct action, correct refusal, correct escalation. Action correctness
-              measures whether the right records were created with the right values. Response completeness checks that
-              nothing required was omitted.</p>
-          </div>
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Reliability scoring</div>
-            <p>Repeated runs scoring &mdash; an agent that reliably scores 85% is more valuable than one that scores
-              100% once and 60% on average. Consistency across task types matters.</p>
-          </div>
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Efficiency scoring</div>
-            <p>Runtime, resource consumption, and API call volume. Doing more with less is rewarded.</p>
-          </div>
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Task isolation</div>
-            <p>Each task runs against an isolated environment snapshot with a randomised operational date. No data leaks
-              between tasks.</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 7c: Special nominations -->
-      <div style="margin-top:2rem;">
-        <h3 style="margin-bottom:0.75rem;">Special Nominations</h3>
-        <div class="nominations">
-          <span class="nomination-badge nomination-badge--featured">Safest Agent</span>
-          <span class="nomination-badge">Most Reliable Agent</span>
-          <span class="nomination-badge">Most Efficient Agent</span>
-          <span class="nomination-badge">Best Enterprise Team</span>
-          <span class="nomination-badge">Breakthrough Newcomer</span>
-        </div>
-      </div>
-
-      <!-- 7d: Soft CTA -->
-      <p class="soft-cta">Seen enough? <a href="#register">Register now &#8594;</a></p>
-
-    </div>
-  </section>
-
-
   <!-- PARTNER LOGO BAR (between Sections 7 and 8) -->
   <div class="partner-bar">
+    <p class="partner-bar__heading">Supported by industry and ecosystem partners</p>
     <div class="partner-logos">
       <div class="partner-logo-frame">
         <img src="assets/partner-logos/ADNOC_Gas.svg" alt="ADNOC Gas" class="partner-logo partner-logo--adnoc">
@@ -761,17 +797,17 @@
   <div id="register-switch-point"></div>
 
 
-  <!-- SECTION 8 &mdash; FOR INDUSTRY PROFESSIONALS -->
+  <!-- SECTION 8 &mdash; For Industry Professionals & AI Practitioners -->
   <section id="industry" class="section section--alt">
     <div class="container">
-      <h2 class="section__heading">For Industry Professionals</h2>
+      <h2 class="section__heading">For Industry Professionals & AI Practitioners</h2>
 
       <!-- 8a: Orienting block (max 60 words) -->
       <div class="section-intro section-intro--bordered">
         <p>The Agents Reliability Challenge is a global online challenge where AI builders construct autonomous agents
           that operate in a simulated enterprise environment &mdash; creating records, enforcing policies, managing
-          workflows, and knowing when to refuse unauthorised actions. Agents are evaluated automatically on accuracy,
-          reliability, and efficiency.</p>
+          workflows, and knowing when to refuse unauthorised actions. Agents are evaluated automatically on reliability,
+          compliance, and efficiency.</p>
       </div>
 
       <div class="enterprise-groups">
@@ -783,7 +819,7 @@
             <li>Low-risk way to test skills against the global AI community</li>
             <li>Structured onboarding with guided warm-up, SDK, and starter templates</li>
             <li>Compete alongside external AI builders &mdash; learn modern approaches firsthand</li>
-            <li>"Best Enterprise Team" nomination for in-house industry teams</li>
+            <li>"Best Enterprise Team" nomination specifically for in-house industry teams</li>
           </ul>
         </div>
 
@@ -801,7 +837,7 @@
       </div>
 
       <!-- 8d: Participation modes &mdash; collapsible -->
-      <details class="collapsible" id="participation-modes" style="margin-top:2rem;">
+      <details class="collapsible mt-section" id="participation-modes">
         <summary class="collapsible__trigger">
           See all participation options
           <span class="collapsible__icon" aria-hidden="true"></span>
@@ -835,9 +871,10 @@
       </details>
 
       <!-- 8e: Enterprise CTA -->
-      <div style="margin-top:2rem;">
-        <a href="#register-secondary" class="btn btn--primary" data-track="enterprise_cta_click">Register Your Team</a>
-        <p style="margin-top:1rem; font-size:0.875rem; color:var(--color-text-muted);">
+      <div class="mt-section">
+        <a href="#register-secondary" class="btn btn--primary" data-track="enterprise_cta_click"
+          data-cta-id="industry_register_team_secondary">Register Your Team</a>
+        <p class="cta-note">
           Partnership or sponsorship inquiries: <a
             href="mailto:contact@ai-agents-challenge.digital">contact@ai-agents-challenge.digital</a>
         </p>
@@ -848,7 +885,7 @@
 
 
   <!-- SECTION 9 &mdash; FAQ -->
-  <section id="faq" class="section">
+  <section id="faq" class="section section--tight">
     <div class="container">
       <h2 class="section__heading">Frequently Asked Questions</h2>
 
@@ -891,9 +928,8 @@
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-item__answer">
-            <p>Automatically, against built-in task criteria. Three dimensions: accuracy (correct actions and outcomes),
-              reliability (consistent performance), and efficiency (compute and API usage). No subjective judging, no
-              demos, no presentations.</p>
+            <p>Your agent is scored on three dimensions: reliability (did it produce correct, complete results?),
+              compliance (did it respect policies and role boundaries?), and efficiency (how much compute did it use?).</p>
           </div>
         </details>
 
@@ -927,17 +963,6 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-8">
-          <summary class="faq-item__question">What do I win?
-            <span class="faq-item__question-icon" aria-hidden="true"></span>
-          </summary>
-          <div class="faq-item__answer">
-            <p>A grand prize for top overall performance, plus special nominations (Safest Agent, Most Reliable, Most
-              Efficient, Breakthrough Newcomer, Best Enterprise Team). Top solutions are showcased. <a
-                href="#evaluation">See the evaluation section</a> for details.</p>
-          </div>
-        </details>
-
         <details class="faq-item" id="faq-9">
           <summary class="faq-item__question">I work at an energy company &mdash; how can my team participate?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
@@ -955,8 +980,8 @@
           </summary>
           <div class="faq-item__answer">
             <p>Registration is open now. Exact dates for the warm-up and main challenge will be announced soon. <a
-                href="#register">Register</a> to be notified when dates are confirmed. See the <a
-                href="#how-it-works">timeline</a> for the latest.</p>
+                href="#register" data-cta-id="faq_notify_primary">Register</a> to be notified when dates are confirmed.
+              See the <a href="#how-it-works">timeline</a> for the latest.</p>
           </div>
         </details>
 
@@ -968,7 +993,7 @@
   <!-- SECTION 10 &mdash; REGISTRATION FORM (SECONDARY / COMPACT) -->
   <section id="register-secondary" class="section section--form section--form-compact">
     <div class="container">
-      <h2 class="section__heading">Don't miss Edition 1.</h2>
+      <h2 class="section__heading">Enter the first edition of Agents Reliability Challenge</h2>
       <p class="section__subtext">Join 100+ builders testing agents under real constraints.</p>
 
       <div class="json-workflow json-workflow--compact" aria-live="polite">
@@ -999,6 +1024,14 @@
           <span class="field-error" id="email-secondary-error" role="alert" aria-live="polite"></span>
         </div>
 
+        <div class="form-field">
+          <label for="password-secondary">Password <span aria-hidden="true">*</span></label>
+          <input type="password" id="password-secondary" name="password" required minlength="8"
+            autocomplete="new-password" aria-describedby="password-secondary-hint password-secondary-error">
+          <span class="field-hint" id="password-secondary-hint">Minimum 8 characters</span>
+          <span class="field-error" id="password-secondary-error" role="alert" aria-live="polite"></span>
+        </div>
+
         <div class="form-field form-field--consent">
           <label class="consent-label">
             <input type="checkbox" name="consent" required id="consent-secondary"
@@ -1015,7 +1048,7 @@
         <button type="submit" class="btn btn--primary btn--full-width" id="submit-secondary">
           Register
         </button>
-        <p class="form-note">You'll set a password when warm-up access opens - we'll email you.</p>
+
       </form>
 
       <div id="confirm-secondary" class="submission-confirm" hidden role="status" aria-live="polite">
@@ -1050,12 +1083,11 @@
   <footer class="footer">
     <div class="footer__inner">
       <div>
-        <div class="footer__brand">Agents Reliability Challenge &mdash; Edition 1</div>
-        <p style="margin-top:0.5rem; font-size:0.875rem;">A global online challenge for autonomous agent builders.</p>
+        <div class="footer__brand">Agents Reliability Challenge</div>
+        <p class="footer__tagline">A global online challenge for autonomous agent builders.</p>
       </div>
 
       <div class="footer__social">
-        <a href="https://twitter.com/" target="_blank" rel="noopener">Twitter/X</a>
         <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://discord.com/channels/1490619158940090469/" target="_blank" rel="noopener">Discord</a>
         <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
@@ -1063,7 +1095,8 @@
 
       <div class="footer__links">
         <a href="mailto:contact@ai-agents-challenge.digital">Contact</a>
-        <a href="#register">Privacy Notice</a>
+        <button type="button" class="privacy-toggle" aria-expanded="false" aria-controls="privacy-notice-dialog">Privacy
+          Notice</button>
       </div>
 
       <div class="footer__copy">&copy; 2026 ARC. All rights reserved.</div>
