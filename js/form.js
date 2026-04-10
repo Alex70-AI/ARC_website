@@ -61,7 +61,7 @@ function resolveCtaSource(link) {
   const section = link.closest('section[id], header, footer');
   const sectionId = section?.id || section?.tagName?.toLowerCase() || 'page';
   const text = normaliseText(link.textContent);
-  if (href === '#register') {
+  if (href === '#register' || href === '#register-secondary') {
     return `${sectionId}_${text || 'register_link'}`;
   }
   return null;
@@ -85,8 +85,8 @@ function captureRegistrationIntent(link) {
 function getRegistrationIntent(instance) {
   if (lastRegistrationIntent) return lastRegistrationIntent;
   return {
-    cta_button_id: 'direct_submit_primary',
-    cta_source: 'direct_form_primary',
+    cta_button_id: `direct_submit_${instance}`,
+    cta_source: `direct_form_${instance}`,
   };
 }
 
@@ -277,7 +277,7 @@ function initJsonWorkflow() {
 }
 
 function initRegistrationIntentCapture() {
-  document.querySelectorAll('a[href="#register"]').forEach((link) => {
+  document.querySelectorAll('a[href="#register"], a[href="#register-secondary"]').forEach((link) => {
     link.addEventListener('click', () => captureRegistrationIntent(link));
   });
 }

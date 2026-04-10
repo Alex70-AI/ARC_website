@@ -25,14 +25,16 @@ Sections below are marked **[Phase A]** or **[Phase B]** where the distinction a
 
 Minimum viable data at registration. Collect only what is needed to create an account and contact the registrant. Everything else moves to post-registration profile completion on the ARC platform.
 
-The target: a technically strong person arriving from a Telegram link registers in under 60 seconds. Three fields. No decisions to make. No dropdowns to deliberate over.
+Authentication is passwordless: registration does not ask the participant to create or enter a password. The system generates a personal access token and sends a unique access link to the registered email.
+
+The target: a technically strong person arriving from a Telegram link registers in under 60 seconds. Name and email are sufficient to register. Country remains optional for reporting and timezone communications.
 
 ### Registration Fields
 
 | # | Field | Required | Type | Validation | Rationale |
 |---|-------|----------|------|------------|-----------|
 | 1 | **Full name** | Yes | Text input | Min 2 characters. No character-set restriction (supports non-Latin names). | Identity. Needed for leaderboard display, certificates, and communications. Single field — not split into first/last. Reduces friction, accommodates naming conventions globally. |
-| 2 | **Email** | Yes | Email input | Standard email format validation (client-side + server-side). | Primary contact channel. Account identifier. Used for confirmation, warm-up access credentials, and all challenge communications. |
+| 2 | **Email** | Yes | Email input | Standard email format validation (client-side + server-side). | Primary contact channel. Account identifier. Used for confirmation, warm-up access credentials, and all challenge communications. Personal access links are sent to this address. |
 | 3 | **Country** | Optional | Dropdown (searchable) | ISO 3166-1 country list. "Prefer not to say" as an option. | Useful for understanding geographic distribution, timezone-aware communications, and partner reporting. Optional because it's not essential for participation and adds a decision point. |
 
 ### Fields Explicitly Excluded from Registration
@@ -48,6 +50,7 @@ These are collected post-registration in the participant's ARC platform profile.
 | Framework preferences | Platform profile | Interesting for analytics but zero operational value at sign-up. |
 | Company / organization | Platform profile | Sensitive for some (enterprise participants may not want to declare affiliation publicly). Better asked in a private profile context. |
 | GitHub / portfolio link | Platform profile | Valuable for showcasing and recruiting, but adds friction and feels like gatekeeping at registration. |
+| Password / passphrase | Not collected at registration | ARC uses passwordless access. The system issues a personal tokenized access link to the registered email. |
 | How did you hear about ARC | Platform profile or post-registration survey | Attribution is better handled through URL parameters and analytics than self-report at the form level. If asked, make it a lightweight post-registration prompt — not a registration-gate field. |
 
 ### Profile Completion (Post-Registration)
@@ -165,7 +168,7 @@ Note: In Phase A, registration test data is stored in the local JSON file for de
 2. **Send a confirmation email** immediately (triggered server-side on successful registration). Contents:
 
    - Subject: "You're in — ARC Registration Confirmed"
-   - Body: Confirms registration. States when the warm-up opens (or "we'll email you when the warm-up opens" if date is TBD). Links to Discord and GitHub repo. Includes a link to complete their profile on the ARC platform (if the platform is ready) or notes that platform access is coming soon. Footer includes the privacy contact email and a note that they can request data deletion at any time.
+   - Body: Confirms registration. States when the warm-up opens (or "we'll email you when the warm-up opens" if date is TBD). Includes the participant's personal tokenized access link. Links to Discord and GitHub repo. Includes a link to complete their profile on the ARC platform (if the platform is ready) or notes that platform access is coming soon. Footer includes the privacy contact email and a note that they can request data deletion at any time.
 
 3. **Do not auto-redirect** to the ARC platform. The static website and the platform are separate systems at launch. The confirmation email is the bridge.
 
