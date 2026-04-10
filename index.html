@@ -22,14 +22,11 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://ai-agents-challenge.digital/">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
@@ -79,40 +76,50 @@
 
   <!-- SECTION 2 - HERO -->
   <section class="hero section--dark">
-    <div class="container">
-      <h1>Build an agent that can act<br>&mdash; and knows when it shouldn&rsquo;t.</h1>
-      <p class="hero__subline text-muted">
-        Test it in a simulated enterprise environment &mdash; using APIs, updating records, enforcing policies, and
-        knowing when not to act.
-      </p>
+    <div class="container hero-shell">
+      <div class="hero-main">
+        <p class="hero__brand-label">Agents Reliability Challenge</p>
+        <h1 class="hero__headline">Build an agent that can act<br>&mdash; and knows when it&nbsp;<span
+            class="hero__headline-accent">shouldn&rsquo;t</span>.</h1>
+        <p class="hero__subline">Test it in a simulated enterprise environment: real APIs, live records, policy
+          enforcement, and automatic evaluation across accuracy, reliability, and efficiency.</p>
+        <div class="hero__cta-group">
+          <a href="#register" class="btn btn--primary btn--lg" data-track="hero_register_click"
+            data-cta-id="hero_register_primary">Register</a>
+          <a href="#how-it-works" class="btn btn--ghost btn--lg">See how it works</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SECTION 3 - CHALLENGE OVERVIEW (What Is This) -->
-  <section class="section">
+  <section class="section section--builder-intro">
     <div class="container">
-      <h2 class="section__heading">Why ARC Is Different</h2>
+      <p class="section-kicker">Why ARC is different</p>
+      <h2 class="section__heading section-header">Not a hackathon. Not a benchmark.<br>
+        A scored evaluation challenge.t
+      </h2>
 
       <div class="overview-grid">
-        <div class="overview-card">
+        <div class="overview-card feature-card">
           <h3>Realistic enterprise environment</h3>
           <p>Agents interact with structured APIs, create records, and mutate state in a simulated business system. Not
             a prompt benchmark.</p>
         </div>
 
-        <div class="overview-card">
+        <div class="overview-card feature-card">
           <h3>No domain expertise needed</h3>
           <p>The environment and a curated knowledge base provide everything the agent needs. Designed for AI builders
             from any background.</p>
         </div>
 
-        <div class="overview-card">
+        <div class="overview-card feature-card">
           <h3>Built-in, scored evaluation</h3>
           <p>Success is measured by what the agent does &mdash; actions taken, records created, policies respected. Not
             by demos or presentations.</p>
         </div>
 
-        <div class="overview-card">
+        <div class="overview-card feature-card">
           <h3>Reliability and policy-awareness are scored</h3>
           <p>The challenge tests whether your agent knows when to refuse, escalate, or ask for clarification &mdash; not
             just whether it can complete a task.</p>
@@ -121,6 +128,7 @@
 
       <div class="problem-statement">
         <p>
+          <span class="problem-statement__title">The gap</span>
           Strong agent builders rarely get to test against policy-heavy enterprise systems.
           Enterprise teams rarely get credible evidence of what modern agents can do.
           This challenge bridges both worlds in a structured, short, high-signal engagement.
@@ -130,85 +138,401 @@
   </section>
 
   <!-- SECTION 4 - HOW IT WORKS -->
-  <section id="how-it-works" class="section section--alt">
+  <section id="how-it-works" class="section section--alt section--process">
     <div class="container">
-      <h2 class="section__heading">How It Works</h2>
+      <p class="section-kicker">Challenge format</p>
+      <h2 class="section__heading section-header">How It Works</h2>
 
       <!-- Context line -->
-      <p class="section-lead">Your agent operates in a simulated
-        enterprise system through a REST API &mdash; taking real actions that are scored automatically.</p>
+      <p class="section-lead">Three phases, fully online. Register, complete the warm-up, then run your agent on
+        challenge day.</p>
 
       <!-- Step cards -->
       <div class="steps-list">
-        <div class="step-card">
+        <div class="step-card feature-card">
           <div class="step-card__header">
             <span class="step-badge">1</span>
             <strong class="step-card__label">Registration &amp; Onboarding</strong>
           </div>
-          <p class="step-card__desc">Complete introductory tasks in a test environment at your own pace (~2 weeks).</p>
+          <p class="step-card__desc">Practice in a test environment at your own pace (~2 weeks). Upgrade agent to handle
+            more complex tasks. </p>
         </div>
-        <div class="step-card">
+        <div class="step-card feature-card">
           <div class="step-card__header">
             <span class="step-badge">2</span>
             <strong class="step-card__label">Main challenge</strong>
           </div>
-          <p class="step-card__desc">Solve tasks in the full environment. Scored automatically. Done in 1 day (2-6 hours).</p>
+          <p class="step-card__desc">Solve tasks in the full environment. Scored automatically. Done in 1 day (~4
+            hours). Leaderboard update real-time.</p>
         </div>
-        <div class="step-card">
+        <div class="step-card feature-card">
           <div class="step-card__header">
             <span class="step-badge">3</span>
             <strong class="step-card__label">Results &amp; recognition</strong>
           </div>
-          <p class="step-card__desc">Leaderboards for reliability, compliance, and efficiency. Top solutions showcased.</p>
+          <p class="step-card__desc">Resulting Leaderboards for reliability, compliance, and efficiency. Top solutions
+            showcased.
+          </p>
         </div>
       </div>
 
-      <!-- 4b: What your agent actually does -->
-      <div>
-        <h3 class="subsection-heading">What your agent actually does</h3>
-
-        <!-- Pipeline strip -->
-        <div class="pipeline-strip">
-          Receives task with assigned role &rarr; Interacts via REST API &rarr; Takes actions &rarr; Must stay within
-          role permissions
+      <div class="meta-grid">
+        <div class="info-card">
+          <div class="logistics-bar__label">Format</div>
+          <div class="logistics-bar__value">Online</div>
         </div>
-
-        <!-- Compliance callout -->
-        <div class="compliance-callout">
-          Some tasks require the agent to <strong>refuse</strong> an action &mdash; because it falls outside role
-          authority. Knowing when not to act is part of the score.
+        <div class="info-card">
+          <div class="logistics-bar__label">Access</div>
+          <div class="logistics-bar__value">Worldwide</div>
         </div>
-
-        <!-- Domain reveal -->
-        <p class="domain-note">
-          The simulated environment is an operations &amp; maintenance system &mdash; but you don't need to know
-          anything about the industry. The knowledge base and standard operating procedures are provided.
-        </p>
-      </div>
-
-      <!-- Logistics bar as label–value pairs -->
-      <div class="logistics-bar">
-        <div class="logistics-bar__items">
-          <div>
-            <div class="logistics-bar__label">Format</div>
-            <div class="logistics-bar__value">Online</div>
-          </div>
-          <div>
-            <div class="logistics-bar__label">Access</div>
-            <div class="logistics-bar__value">Worldwide</div>
-          </div>
-          <div>
-            <div class="logistics-bar__label">Teams</div>
-            <div class="logistics-bar__value">Individuals or teams</div>
-          </div>
-          <div>
-            <div class="logistics-bar__label">Tooling</div>
-            <div class="logistics-bar__value">Python SDK provided</div>
-          </div>
+        <div class="info-card">
+          <div class="logistics-bar__label">Teams</div>
+          <div class="logistics-bar__value">Individuals or teams</div>
+        </div>
+        <div class="info-card">
+          <div class="logistics-bar__label">Tooling</div>
+          <div class="logistics-bar__value">Python SDK provided</div>
         </div>
       </div>
 
-      <details class="collapsible" id="task-examples">
+    </div>
+  </section>
+
+  <!-- SECTION 5 - WHY COMPETE / BUILDER VALUE PROPOSITION -->
+  <section id="builders" class="section section--builders">
+    <div class="container">
+      <p class="section-kicker">Why This Challenge</p>
+      <h2 class="section__heading section-header">Six reasons the ARC is worth your time.</h2>
+
+      <div class="value-points">
+
+        <div class="value-point feature-card">
+          <div class="value-point__title">A real enterprise test environment</div>
+          <p>The kind of environment you can't access outside an actual enterprise deployment. Role-based authority,
+            policy enforcement, multi-step workflows with consequences.</p>
+        </div>
+
+        <div class="value-point feature-card">
+          <div class="value-point__title">Objective scoring</div>
+          <p>No judges, no demos. The environment evaluates your agent automatically across accuracy, reliability, and
+            efficiency.</p>
+        </div>
+
+        <div class="value-point feature-card">
+          <div class="value-point__title">Framework-agnostic</div>
+          <p>Any language, any framework. REST API + Python SDK provided. Starter templates for LangChain, CrewAI, and
+            other popular frameworks.</p>
+        </div>
+
+        <div class="value-point feature-card">
+          <div class="value-point__title">Recognition that matters</div>
+          <p>Multiple leaderboards and nominations: Best Agent Overall, Most Efficient Agent, Best Enterprise Team, Best
+            Student Team. Top solutions showcased.</p>
+        </div>
+
+        <div class="value-point feature-card">
+          <div class="value-point__title">Capabilities signal</div>
+          <p>A completed submission demonstrates you can build an enterprise-grade agent &mdash; not just a chatbot
+            demo. A credible signal for roles where enterprise context matters.</p>
+        </div>
+
+        <div class="value-point feature-card">
+          <div class="value-point__title">Beyond the Leaderboards</div>
+          <p>Top participants may be featured in solution showcases, invited to publish their approach, or connected
+            with organisations exploring enterprise agent deployment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- SECTION 6 &mdash; REGISTRATION FORM (PRIMARY) -->
+  <section id="register" class="section section--form section--airy">
+    <div class="container">
+      <p class="section-kicker">Convinced?</p>
+      <h2 class="section__heading section-header">Ready to test your agent?</h2>
+      <p class="section__subtext">Free to enter. Any framework. Start with Onboarding and build from there.</p>
+
+      <div class="registration-layout registration-layout--form-right">
+        <div id="activation-links-primary" class="registration-copy info-card">
+          <h3>What happens next</h3>
+          <ul class="registration-points">
+            <li>Receive email invite to Challenge platform with a unique access link (tokenized)</li>
+            <li>Review onboarding tasks and start practicing</li>
+            <li>Join the Discord to discuss tasks, issues and solutions with peers</li>
+            <li>On the day of Challenge full tasks list will be released and agents can start solving them</li>
+          </ul>
+
+        </div>
+
+        <div class="registration-form-surface">
+          <details class="collapsible accordion registration-advanced">
+            <summary class="collapsible__trigger">
+              Already have a saved registration JSON?
+              <span class="collapsible__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="collapsible__body">
+              <div class="json-workflow" aria-live="polite">
+                <p class="json-workflow__title">Local JSON workflow</p>
+                <p class="json-workflow__text">Current source file: <strong data-json-file>registrations.json</strong>
+                </p>
+                <label class="json-workflow__label" for="json-load-primary">Load current JSON</label>
+                <input id="json-load-primary" type="file" accept=".json,application/json" data-json-load-input>
+                <p class="json-workflow__status" data-json-status></p>
+              </div>
+            </div>
+          </details>
+
+          <form id="form-primary" class="reg-form" novalidate data-form-instance="primary">
+            <div class="honeypot-wrapper" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="form_rendered_at" id="form-primary-rendered-at">
+
+            <div class="form-field">
+              <label for="name-primary">Full name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name-primary" name="full_name" required autocomplete="name" minlength="2"
+                aria-describedby="name-primary-error">
+              <span class="field-error" id="name-primary-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="email-primary">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email-primary" name="email" required autocomplete="email"
+                aria-describedby="email-primary-error">
+              <span class="field-error" id="email-primary-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="country-primary">Country <span class="optional-label">(optional)</span></label>
+              <select id="country-primary" name="country" autocomplete="country">
+                <option value="">Select country</option>
+                <option value="prefer-not">Prefer not to say</option>
+                <option value="AF">Afghanistan</option>
+                <option value="AL">Albania</option>
+                <option value="DZ">Algeria</option>
+                <option value="AD">Andorra</option>
+                <option value="AO">Angola</option>
+                <option value="AR">Argentina</option>
+                <option value="AM">Armenia</option>
+                <option value="AU">Australia</option>
+                <option value="AT">Austria</option>
+                <option value="AZ">Azerbaijan</option>
+                <option value="BH">Bahrain</option>
+                <option value="BD">Bangladesh</option>
+                <option value="BB">Barbados</option>
+                <option value="BY">Belarus</option>
+                <option value="BE">Belgium</option>
+                <option value="BO">Bolivia</option>
+                <option value="BA">Bosnia & Herzegovina</option>
+                <option value="BW">Botswana</option>
+                <option value="BR">Brazil</option>
+                <option value="BN">Brunei</option>
+                <option value="BG">Bulgaria</option>
+                <option value="KH">Cambodia</option>
+                <option value="CM">Cameroon</option>
+                <option value="CA">Canada</option>
+                <option value="CF">Central African Republic</option>
+                <option value="TD">Chad</option>
+                <option value="CL">Chile</option>
+                <option value="CN">China</option>
+                <option value="CO">Colombia</option>
+                <option value="CG">Congo</option>
+                <option value="CR">Costa Rica</option>
+                <option value="HR">Croatia</option>
+                <option value="CU">Cuba</option>
+                <option value="CY">Cyprus</option>
+                <option value="CZ">Czechia</option>
+                <option value="DK">Denmark</option>
+                <option value="DM">Dominica</option>
+                <option value="DO">Dominican Republic</option>
+                <option value="EC">Ecuador</option>
+                <option value="EG">Egypt</option>
+                <option value="SV">El Salvador</option>
+                <option value="EE">Estonia</option>
+                <option value="ET">Ethiopia</option>
+                <option value="FI">Finland</option>
+                <option value="FR">France</option>
+                <option value="GA">Gabon</option>
+                <option value="GM">Gambia</option>
+                <option value="GE">Georgia</option>
+                <option value="DE">Germany</option>
+                <option value="GH">Ghana</option>
+                <option value="GI">Gibraltar</option>
+                <option value="GR">Greece</option>
+                <option value="GL">Greenland</option>
+                <option value="GD">Grenada</option>
+                <option value="GP">Guadeloupe</option>
+                <option value="GT">Guatemala</option>
+                <option value="HK">Hong Kong SAR</option>
+                <option value="HU">Hungary</option>
+                <option value="IS">Iceland</option>
+                <option value="IN">India</option>
+                <option value="ID">Indonesia</option>
+                <option value="IR">Iran</option>
+                <option value="IQ">Iraq</option>
+                <option value="IE">Ireland</option>
+                <option value="IL">Israel</option>
+                <option value="IT">Italy</option>
+                <option value="JM">Jamaica</option>
+                <option value="JP">Japan</option>
+                <option value="JO">Jordan</option>
+                <option value="KZ">Kazakhstan</option>
+                <option value="KE">Kenya</option>
+                <option value="KR">Korea</option>
+                <option value="XK">Kosovo</option>
+                <option value="KW">Kuwait</option>
+                <option value="KG">Kyrgyzstan</option>
+                <option value="LA">Laos</option>
+                <option value="419">Latin America</option>
+                <option value="LV">Latvia</option>
+                <option value="LB">Lebanon</option>
+                <option value="LS">Lesotho</option>
+                <option value="LR">Liberia</option>
+                <option value="LY">Libya</option>
+                <option value="LI">Liechtenstein</option>
+                <option value="LT">Lithuania</option>
+                <option value="LU">Luxembourg</option>
+                <option value="MO">Macao SAR</option>
+                <option value="MY">Malaysia</option>
+                <option value="MV">Maldives</option>
+                <option value="ML">Mali</option>
+                <option value="MT">Malta</option>
+                <option value="MX">Mexico</option>
+                <option value="MD">Moldova</option>
+                <option value="MC">Monaco</option>
+                <option value="MN">Mongolia</option>
+                <option value="ME">Montenegro</option>
+                <option value="MA">Morocco</option>
+                <option value="MZ">Mozambique</option>
+                <option value="MM">Myanmar</option>
+                <option value="NA">Namibia</option>
+                <option value="NR">Nauru</option>
+                <option value="NP">Nepal</option>
+                <option value="NL">Netherlands</option>
+                <option value="NC">New Caledonia</option>
+                <option value="NZ">New Zealand</option>
+                <option value="NI">Nicaragua</option>
+                <option value="NE">Niger</option>
+                <option value="NG">Nigeria</option>
+                <option value="NO">Norway</option>
+                <option value="OM">Oman</option>
+                <option value="PK">Pakistan</option>
+                <option value="PA">Panama</option>
+                <option value="PG">Papua New Guinea</option>
+                <option value="PY">Paraguay</option>
+                <option value="PE">Peru</option>
+                <option value="PH">Philippines</option>
+                <option value="PL">Poland</option>
+                <option value="PT">Portugal</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="QA">Qatar</option>
+                <option value="RE">Reunion</option>
+                <option value="RO">Romania</option>
+                <option value="RU">Russia / Россия</option>
+                <option value="SA">Saudi Arabia</option>
+                <option value="RS">Serbia</option>
+                <option value="SG">Singapore</option>
+                <option value="SK">Slovakia</option>
+                <option value="SI">Slovenia</option>
+                <option value="ZA">South Africa</option>
+                <option value="ES">Spain</option>
+                <option value="LK">Sri Lanka</option>
+                <option value="SR">Suriname</option>
+                <option value="SJ">Svalbard & Jan Mayen</option>
+                <option value="SE">Sweden</option>
+                <option value="CH">Switzerland</option>
+                <option value="SY">Syria</option>
+                <option value="TW">Taiwan</option>
+                <option value="TJ">Tajikistan</option>
+                <option value="TZ">Tanzania</option>
+                <option value="TH">Thailand</option>
+                <option value="TT">Trinidad & Tobago</option>
+                <option value="TN">Tunisia</option>
+                <option value="TR">Türkiye</option>
+                <option value="TM">Turkmenistan</option>
+                <option value="UM">U.S. Outlying Islands</option>
+                <option value="VI">U.S. Virgin Islands</option>
+                <option value="UG">Uganda</option>
+                <option value="UA">Ukraine</option>
+                <option value="AE">United Arab Emirates</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="UY">Uruguay</option>
+                <option value="UZ">Uzbekistan</option>
+                <option value="VE">Venezuela</option>
+                <option value="VN">Vietnam</option>
+                <option value="001">world the rest</option>
+
+              </select>
+            </div>
+
+            <div class="form-field form-field--consent">
+              <label class="consent-label">
+                <input type="checkbox" name="consent" required id="consent-primary"
+                  aria-describedby="consent-primary-error">
+                <span>I agree to the processing of my data as described in the
+                  <button type="button" class="privacy-toggle" aria-expanded="false"
+                    aria-controls="privacy-notice-dialog">Privacy Notice</button>
+                  to participate in the Agents Reliability Challenge.
+                </span>
+              </label>
+              <span class="field-error" id="consent-primary-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full-width" id="submit-primary">
+              Register
+            </button>
+          </form>
+
+          <div id="confirm-primary" class="submission-confirm" hidden role="status" aria-live="polite">
+            <h3>You're registered.</h3>
+            <p>Check your email (<strong data-confirm-email></strong>) for your unique access link and next steps.</p>
+            <nav class="post-register-links">
+              <a href="https://discord.com/channels/1490619158940090469/" class="btn btn--secondary" target="_blank"
+                rel="noopener" data-track="discord_link_click">Join the Discord &#8594;</a>
+              <a href="https://github.com/" class="btn btn--secondary" target="_blank" rel="noopener"
+                data-track="github_link_click">Explore the SDK on GitHub &#8594;</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-cards">
+        <a href="https://discord.com/channels/1490619158940090469/" class="action-card" target="_blank" rel="noopener"
+          data-track="discord_link_click">
+          <strong>Join the Discord</strong>
+          <span class="activation-link__desc">Ask questions, form teams, and get warm-up support.</span>
+        </a>
+        <a href="https://github.com/" class="action-card" target="_blank" rel="noopener" data-track="github_link_click">
+          <strong>Explore the SDK on GitHub</strong>
+          <span class="activation-link__desc">Access the Python SDK, starter templates, and examples.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: AGENT ENVIRONMENT -->
+  <section id="agent-environment" class="section section--process">
+    <div class="container">
+      <p class="section-kicker">What your agent does</p>
+      <h2 class="section__heading section-header">Inside the Simulated Environment</h2>
+
+      <div class="agent-explainer">
+        <ul class="agent-explainer__list">
+          <li>In each task, your agent is <strong>assigned a role</strong> within the simulated system</li>
+          <li>It interacts with the environment <strong>via REST API</strong></li>
+          <li>It updates records, approvals, and workflows within its assigned permissions</li>
+          <li>Some tasks require the agent to <strong>refuse or escalate</strong> &mdash; acting outside role authority
+            is an error</li>
+          <li>No industry expertise required &mdash; the knowledge base and standard operating procedures are provided
+          </li>
+        </ul>
+      </div>
+
+      <details class="collapsible accordion" id="task-examples">
         <summary class="collapsible__trigger">
           See example tasks
           <span class="collapsible__icon" aria-hidden="true"></span>
@@ -238,175 +562,120 @@
           </div>
 
           <div class="task-example">
-            <div class="task-example__title">Cross-system lookup and report</div>
-            <p>The agent must retrieve data from two endpoints, reconcile a discrepancy, and produce a structured
-              report. Accuracy, completeness, and API efficiency are all scored independently.</p>
+            <p> and many more </p>
           </div>
         </div>
       </details>
 
-      <div class="mt-section">
-        <h3 class="subsection-heading">Key Dates</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-item__dot"></div>
-            <div>
-              <span class="timeline-item__label">Registration opens</span>
-              <span class="timeline-item__value">Now open</span>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-item__dot"></div>
-            <div>
-              <span class="timeline-item__label">Warm-up period</span>
-              <span class="timeline-item__value">~2 weeks before challenge</span>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-item__dot"></div>
-            <div>
-              <span class="timeline-item__label">Main challenge</span>
-              <span class="timeline-item__value">1 day &mdash; date TBA</span>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-item__dot"></div>
-            <div>
-              <span class="timeline-item__label">Results announced</span>
-              <span class="timeline-item__value">Shortly after challenge day</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
-  <!-- SECTION 5 - WHY COMPETE / BUILDER VALUE PROPOSITION -->
-  <section id="builders" class="section">
-    <div class="container">
-      <h2 class="section__heading">Why This Challenge</h2>
-      <p class="section__subtext">Six reasons the ARC is worth your time.</p>
-
-      <div class="value-points">
-
-        <div class="value-point">
-          <div class="value-point__title">A real enterprise test environment</div>
-          <p>The kind of environment you can't access outside an actual enterprise deployment. Role-based authority,
-            policy enforcement, multi-step workflows with consequences.</p>
-        </div>
-
-        <div class="value-point">
-          <div class="value-point__title">Objective scoring</div>
-          <p>No judges, no demos. The environment evaluates your agent automatically across accuracy, reliability, and
-            efficiency.</p>
-        </div>
-
-        <div class="value-point">
-          <div class="value-point__title">Framework-agnostic</div>
-          <p>Any language, any framework. REST API + Python SDK provided. Starter templates for LangChain, CrewAI, and
-            other popular frameworks.</p>
-        </div>
-
-        <div class="value-point">
-          <div class="value-point__title">Recognition that matters</div>
-          <p>Multiple leaderboards and nominations: Best Agent Overall, Most Efficient Agent, Best Enterprise Team, Best
-            Student Team. Top solutions showcased.</p>
-        </div>
-
-        <div class="value-point">
-          <div class="value-point__title">Capabilities signal</div>
-          <p>A completed submission demonstrates you can build an enterprise-grade agent &mdash; not just a chatbot
-            demo. A credible signal for roles where enterprise context matters.</p>
-        </div>
-
-        <div class="value-point">
-          <div class="value-point__title">Beyond the Leaderboards</div>
-          <p>Top participants may be featured in solution showcases, invited to publish their approach, or connected
-            with organisations exploring enterprise agent deployment.</p>
-        </div>
-
-      </div>
-
-      <p class="text-muted mt-section">
-        Prizes and recognition for top performers. Free to enter.
-      </p>
-
-    </div>
-  </section>
-
+  <div class="section-divider"></div>
 
   <!-- SECTION 7 &mdash; EVALUATION & SCORING -->
-  <section id="evaluation" class="section">
+  <section id="evaluation" class="section section--alt section--evaluation">
     <div class="container">
-      <h2 class="section__heading">Evaluation &amp; Scoring</h2>
+      <p class="section-kicker">How agents scored</p>
+      <h2 class="section__heading section-header">Evaluation &amp; Scoring</h2>
 
       <!-- 7a: Three dimensions -->
       <div class="eval-dimensions">
-        <div class="eval-dimension">
-          <div class="eval-dimension__label">Accuracy</div>
-          <p>Did the agent take the right actions and produce correct outcomes?</p>
-        </div>
-        <div class="eval-dimension">
+        <div class="eval-dimension info-card">
           <div class="eval-dimension__label">Reliability</div>
-          <p>How consistently does the agent perform across repeated runs?</p>
+          <p>How consistently does the agent perform across repeated runs and task variations?</p>
         </div>
-        <div class="eval-dimension">
+        <div class="eval-dimension info-card">
+          <div class="eval-dimension__label">Compliance</div>
+          <p>Did the agent respect policies, role boundaries, and escalation/refusal requirements?</p>
+        </div>
+        <div class="eval-dimension info-card">
           <div class="eval-dimension__label">Efficiency</div>
           <p>How much compute and cost does the agent use per task?</p>
         </div>
       </div>
 
-      <p class="domain-note">The environment evaluates your agent automatically. No subjective judging.</p>
+      <div class="domain-note" role="note" aria-label="Evaluation integrity note">
+        <p class="domain-note__eyebrow">Fair, repeatable evaluation</p>
+        <p class="domain-note__text">Evaluation is fully automated, with no human judges. Every task runs in a fresh,
+          isolated snapshot with a fixed starting state, so one-off hardcoded strategies do not generalize.</p>
+      </div>
 
       <!-- 7b: Detailed criteria &mdash; collapsible -->
-      <details class="collapsible" id="eval-detail">
+      <details class="collapsible accordion" id="eval-detail">
         <summary class="collapsible__trigger">
           See how scoring works
           <span class="collapsible__icon" aria-hidden="true"></span>
         </summary>
         <div class="collapsible__body">
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Reliability scoring</div>
-            <p>Outcome type classification: correct action, correct refusal, correct escalation. Action correctness
-              measures whether the right records were created with the right values. Response completeness checks that
-              nothing required was omitted.</p>
+
+          <div class="eval-detail-item eval-detail-item--matrix">
+
+            <p class="eval-matrix__intro">Example: the correct outcome depends on role authority and operating context.
+            </p>
+            <div class="eval-matrix__scroll" role="region" aria-label="Example scoring matrix, horizontally scrollable">
+              <table class="eval-matrix">
+                <caption class="visually-hidden">Scoring example showing how one task maps to different correct outcomes
+                  by scenario.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" class="eval-matrix__axis"><span class="visually-hidden">Row labels</span></th>
+                    <th scope="col" class="eval-matrix__scenario eval-matrix__scenario--a">Scenario A</th>
+                    <th scope="col" class="eval-matrix__scenario eval-matrix__scenario--b">Scenario B</th>
+                    <th scope="col" class="eval-matrix__scenario eval-matrix__scenario--c">Scenario C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="eval-matrix__row eval-matrix__row--task">
+                    <th scope="row">Task</th>
+                    <td colspan="3">Approve work order for pressure gauge replacement</td>
+                  </tr>
+                  <tr class="eval-matrix__row eval-matrix__row--role">
+                    <th scope="row">Role</th>
+                    <td>Mechanical technician</td>
+                    <td>Instrument engineer</td>
+                    <td>Instrument engineer</td>
+                  </tr>
+                  <tr class="eval-matrix__row eval-matrix__row--context">
+                    <th scope="row">Variables</th>
+                    <td>Materials available</td>
+                    <td>Materials available</td>
+                    <td>Materials not available</td>
+                  </tr>
+                  <tr class="eval-matrix__row eval-matrix__row--correct">
+                    <th scope="row">Correct outcome</th>
+                    <td><code>deny_permission</code></td>
+                    <td><code>WO_status_APPR</code></td>
+                    <td><code>deny_materials_no_stock</code></td>
+                  </tr>
+                  <tr class="eval-matrix__row eval-matrix__row--scores">
+                    <th scope="row">Possible output | Score</th>
+                    <td>
+                      <ul class="eval-matrix__scores">
+                        <li><code>deny_permission</code><span class="eval-score eval-score--hit">1.0</span></li>
+                        <li><code>WO_status_APPR</code><span class="eval-score eval-score--miss">0.0</span></li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="eval-matrix__scores">
+                        <li><code>WO_status_APPR</code><span class="eval-score eval-score--hit">1.0</span></li>
+                      </ul>
+                    </td>
+                    <td>
+                      <ul class="eval-matrix__scores">
+                        <li><code>deny_materials_no_stock</code><span class="eval-score eval-score--hit">1.0</span></li>
+                        <li><code>WO_status_APPR</code><span class="eval-score eval-score--partial">0.3</span></li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Compliance</div>
-            <p>Did your agent respect policies, role boundaries, and operational rules? Including knowing when to
-              refuse.</p>
-          </div>
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Efficiency scoring</div>
-            <p>How much compute and cost does your agent use per task?</p>
-          </div>
-          <div class="eval-detail-item">
-            <div class="eval-detail-item__title">Task isolation</div>
-            <p>Each task runs against an isolated environment snapshot with a predefined operational state. No data
-              leaks
-              between tasks.</p>
-          </div>
+
+
         </div>
       </details>
 
-      <!-- 7c: Special nominations -->
-      <div class="mt-section">
-        <h3 class="subsection-heading">Special Nominations</h3>
-        <div class="nominations">
-          <div class="nomination-badge"><strong>Best Agent Overall</strong> &mdash; Highest composite score across
-            reliability, compliance, and efficiency. The grand prize.</div>
-          <div class="nomination-badge"><strong>Most Efficient Agent</strong> &mdash; Best performance per unit of
-            compute and cost. For builders who optimize hard.</div>
-          <div class="nomination-badge"><strong>Best Enterprise Team</strong> &mdash; Strongest submission from an
-            in-house industry team. Proof that enterprise practitioners can compete with the global AI community.</div>
-          <div class="nomination-badge"><strong>Best Student Team</strong> &mdash; Strongest submission from a student
-            team. New to the field doesn't mean out of the running.</div>
-        </div>
-      </div>
 
       <!-- 7d: Soft CTA -->
       <p class="soft-cta">Seen enough? <a href="#register" data-cta-id="evaluation_register_primary">Register now
@@ -415,384 +684,43 @@
     </div>
   </section>
 
-
-  <!-- SECTION 6 &mdash; REGISTRATION FORM (PRIMARY) -->
-  <section id="register" class="section section--form section--airy">
-    <div class="container">
-      <h2 class="section__heading">Ready to test your agent?</h2>
-      <p class="section__subtext">Free to enter. Any framework. Start with Onboarding and build from there.</p>
-
-      <div class="json-workflow" aria-live="polite">
-        <p class="json-workflow__title">Local JSON workflow</p>
-        <p class="json-workflow__text">Current source file: <strong data-json-file>registrations.json</strong></p>
-        <label class="json-workflow__label" for="json-load-primary">Load current JSON</label>
-        <input id="json-load-primary" type="file" accept=".json,application/json" data-json-load-input>
-        <p class="json-workflow__status" data-json-status></p>
-      </div>
-
-      <form id="form-primary" class="reg-form" novalidate data-form-instance="primary">
-        <div class="honeypot-wrapper" aria-hidden="true">
-          <input type="text" name="website" tabindex="-1" autocomplete="off">
-        </div>
-        <input type="hidden" name="form_rendered_at" id="form-primary-rendered-at">
-
-        <div class="form-field">
-          <label for="name-primary">Full name <span aria-hidden="true">*</span></label>
-          <input type="text" id="name-primary" name="full_name" required autocomplete="name" minlength="2"
-            aria-describedby="name-primary-error">
-          <span class="field-error" id="name-primary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <div class="form-field">
-          <label for="email-primary">Email <span aria-hidden="true">*</span></label>
-          <input type="email" id="email-primary" name="email" required autocomplete="email"
-            aria-describedby="email-primary-error">
-          <span class="field-error" id="email-primary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <div class="form-field">
-          <label for="password-primary">Password <span aria-hidden="true">*</span></label>
-          <input type="password" id="password-primary" name="password" required minlength="8"
-            autocomplete="new-password" aria-describedby="password-primary-hint password-primary-error">
-          <span class="field-hint" id="password-primary-hint">Minimum 8 characters</span>
-          <span class="field-error" id="password-primary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <div class="form-field">
-          <label for="country-primary">Country <span class="optional-label">(optional)</span></label>
-          <select id="country-primary" name="country" autocomplete="country">
-            <option value="">Select country</option>
-            <option value="prefer-not">Prefer not to say</option>
-            <option value="AF">Afghanistan</option>
-            <option value="AX">Åland Islands</option>
-            <option value="AL">Albania</option>
-            <option value="DZ">Algeria</option>
-            <option value="AS">American Samoa</option>
-            <option value="AD">Andorra</option>
-            <option value="AO">Angola</option>
-            <option value="AI">Anguilla</option>
-            <option value="AG">Antigua & Barbuda</option>
-            <option value="AR">Argentina</option>
-            <option value="AM">Armenia</option>
-            <option value="AW">Aruba</option>
-            <option value="AU">Australia</option>
-            <option value="AT">Austria</option>
-            <option value="AZ">Azerbaijan</option>
-            <option value="BS">Bahamas</option>
-            <option value="BH">Bahrain</option>
-            <option value="BD">Bangladesh</option>
-            <option value="BB">Barbados</option>
-            <option value="BY">Belarus</option>
-            <option value="BE">Belgium</option>
-            <option value="BZ">Belize</option>
-            <option value="BJ">Benin</option>
-            <option value="BM">Bermuda</option>
-            <option value="BT">Bhutan</option>
-            <option value="BO">Bolivia</option>
-            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-            <option value="BA">Bosnia & Herzegovina</option>
-            <option value="BW">Botswana</option>
-            <option value="BR">Brazil</option>
-            <option value="IO">British Indian Ocean Territory</option>
-            <option value="VG">British Virgin Islands</option>
-            <option value="BN">Brunei</option>
-            <option value="BG">Bulgaria</option>
-            <option value="BF">Burkina Faso</option>
-            <option value="BI">Burundi</option>
-            <option value="CV">Cabo Verde</option>
-            <option value="KH">Cambodia</option>
-            <option value="CM">Cameroon</option>
-            <option value="CA">Canada</option>
-            <option value="029">Caribbean</option>
-            <option value="KY">Cayman Islands</option>
-            <option value="CF">Central African Republic</option>
-            <option value="TD">Chad</option>
-            <option value="CL">Chile</option>
-            <option value="CN">China</option>
-            <option value="CX">Christmas Island</option>
-            <option value="CC">Cocos (Keeling) Islands</option>
-            <option value="CO">Colombia</option>
-            <option value="KM">Comoros</option>
-            <option value="CG">Congo</option>
-            <option value="CD">Congo (DRC)</option>
-            <option value="CK">Cook Islands</option>
-            <option value="CR">Costa Rica</option>
-            <option value="CI">Côte d’Ivoire</option>
-            <option value="HR">Croatia</option>
-            <option value="CU">Cuba</option>
-            <option value="CW">Curaçao</option>
-            <option value="CY">Cyprus</option>
-            <option value="CZ">Czechia</option>
-            <option value="DK">Denmark</option>
-            <option value="DJ">Djibouti</option>
-            <option value="DM">Dominica</option>
-            <option value="DO">Dominican Republic</option>
-            <option value="EC">Ecuador</option>
-            <option value="EG">Egypt</option>
-            <option value="SV">El Salvador</option>
-            <option value="GQ">Equatorial Guinea</option>
-            <option value="ER">Eritrea</option>
-            <option value="EE">Estonia</option>
-            <option value="SZ">Eswatini</option>
-            <option value="ET">Ethiopia</option>
-            <option value="150">Europe</option>
-            <option value="FK">Falkland Islands</option>
-            <option value="FO">Faroe Islands</option>
-            <option value="FJ">Fiji</option>
-            <option value="FI">Finland</option>
-            <option value="FR">France</option>
-            <option value="GF">French Guiana</option>
-            <option value="PF">French Polynesia</option>
-            <option value="GA">Gabon</option>
-            <option value="GM">Gambia</option>
-            <option value="GE">Georgia</option>
-            <option value="DE">Germany</option>
-            <option value="GH">Ghana</option>
-            <option value="GI">Gibraltar</option>
-            <option value="GR">Greece</option>
-            <option value="GL">Greenland</option>
-            <option value="GD">Grenada</option>
-            <option value="GP">Guadeloupe</option>
-            <option value="GU">Guam</option>
-            <option value="GT">Guatemala</option>
-            <option value="GG">Guernsey</option>
-            <option value="GN">Guinea</option>
-            <option value="GW">Guinea-Bissau</option>
-            <option value="GY">Guyana</option>
-            <option value="HT">Haiti</option>
-            <option value="HN">Honduras</option>
-            <option value="HK">Hong Kong SAR</option>
-            <option value="HU">Hungary</option>
-            <option value="IS">Iceland</option>
-            <option value="IN">India</option>
-            <option value="ID">Indonesia</option>
-            <option value="IR">Iran</option>
-            <option value="IQ">Iraq</option>
-            <option value="IE">Ireland</option>
-            <option value="IM">Isle of Man</option>
-            <option value="IL">Israel</option>
-            <option value="IT">Italy</option>
-            <option value="JM">Jamaica</option>
-            <option value="JP">Japan</option>
-            <option value="JE">Jersey</option>
-            <option value="JO">Jordan</option>
-            <option value="KZ">Kazakhstan</option>
-            <option value="KE">Kenya</option>
-            <option value="KI">Kiribati</option>
-            <option value="KR">Korea</option>
-            <option value="XK">Kosovo</option>
-            <option value="KW">Kuwait</option>
-            <option value="KG">Kyrgyzstan</option>
-            <option value="LA">Laos</option>
-            <option value="419">Latin America</option>
-            <option value="LV">Latvia</option>
-            <option value="LB">Lebanon</option>
-            <option value="LS">Lesotho</option>
-            <option value="LR">Liberia</option>
-            <option value="LY">Libya</option>
-            <option value="LI">Liechtenstein</option>
-            <option value="LT">Lithuania</option>
-            <option value="LU">Luxembourg</option>
-            <option value="MO">Macao SAR</option>
-            <option value="MG">Madagascar</option>
-            <option value="MW">Malawi</option>
-            <option value="MY">Malaysia</option>
-            <option value="MV">Maldives</option>
-            <option value="ML">Mali</option>
-            <option value="MT">Malta</option>
-            <option value="MH">Marshall Islands</option>
-            <option value="MQ">Martinique</option>
-            <option value="MR">Mauritania</option>
-            <option value="MU">Mauritius</option>
-            <option value="YT">Mayotte</option>
-            <option value="MX">Mexico</option>
-            <option value="FM">Micronesia</option>
-            <option value="MD">Moldova</option>
-            <option value="MC">Monaco</option>
-            <option value="MN">Mongolia</option>
-            <option value="ME">Montenegro</option>
-            <option value="MS">Montserrat</option>
-            <option value="MA">Morocco</option>
-            <option value="MZ">Mozambique</option>
-            <option value="MM">Myanmar</option>
-            <option value="NA">Namibia</option>
-            <option value="NR">Nauru</option>
-            <option value="NP">Nepal</option>
-            <option value="NL">Netherlands</option>
-            <option value="NC">New Caledonia</option>
-            <option value="NZ">New Zealand</option>
-            <option value="NI">Nicaragua</option>
-            <option value="NE">Niger</option>
-            <option value="NG">Nigeria</option>
-            <option value="NU">Niue</option>
-            <option value="NF">Norfolk Island</option>
-            <option value="KP">North Korea</option>
-            <option value="MK">North Macedonia</option>
-            <option value="MP">Northern Mariana Islands</option>
-            <option value="NO">Norway</option>
-            <option value="OM">Oman</option>
-            <option value="PK">Pakistan</option>
-            <option value="PW">Palau</option>
-            <option value="PS">Palestinian Authority</option>
-            <option value="PA">Panama</option>
-            <option value="PG">Papua New Guinea</option>
-            <option value="PY">Paraguay</option>
-            <option value="PE">Peru</option>
-            <option value="PH">Philippines</option>
-            <option value="PN">Pitcairn Islands</option>
-            <option value="PL">Poland</option>
-            <option value="PT">Portugal</option>
-            <option value="PR">Puerto Rico</option>
-            <option value="QA">Qatar</option>
-            <option value="RE">Réunion</option>
-            <option value="RO">Romania</option>
-            <option value="RU">Russia</option>
-            <option value="RW">Rwanda</option>
-            <option value="WS">Samoa</option>
-            <option value="SM">San Marino</option>
-            <option value="ST">São Tomé & Príncipe</option>
-            <option value="SA">Saudi Arabia</option>
-            <option value="SN">Senegal</option>
-            <option value="RS">Serbia</option>
-            <option value="SC">Seychelles</option>
-            <option value="SL">Sierra Leone</option>
-            <option value="SG">Singapore</option>
-            <option value="SX">Sint Maarten</option>
-            <option value="SK">Slovakia</option>
-            <option value="SI">Slovenia</option>
-            <option value="SB">Solomon Islands</option>
-            <option value="SO">Somalia</option>
-            <option value="ZA">South Africa</option>
-            <option value="SS">South Sudan</option>
-            <option value="ES">Spain</option>
-            <option value="LK">Sri Lanka</option>
-            <option value="SH">St Helena, Ascension, Tristan da Cunha</option>
-            <option value="BL">St. Barthélemy</option>
-            <option value="KN">St. Kitts & Nevis</option>
-            <option value="LC">St. Lucia</option>
-            <option value="MF">St. Martin</option>
-            <option value="PM">St. Pierre & Miquelon</option>
-            <option value="VC">St. Vincent & Grenadines</option>
-            <option value="SD">Sudan</option>
-            <option value="SR">Suriname</option>
-            <option value="SJ">Svalbard & Jan Mayen</option>
-            <option value="SE">Sweden</option>
-            <option value="CH">Switzerland</option>
-            <option value="SY">Syria</option>
-            <option value="TW">Taiwan</option>
-            <option value="TJ">Tajikistan</option>
-            <option value="TZ">Tanzania</option>
-            <option value="TH">Thailand</option>
-            <option value="TL">Timor-Leste</option>
-            <option value="TG">Togo</option>
-            <option value="TK">Tokelau</option>
-            <option value="TO">Tonga</option>
-            <option value="TT">Trinidad & Tobago</option>
-            <option value="TN">Tunisia</option>
-            <option value="TR">Türkiye</option>
-            <option value="TM">Turkmenistan</option>
-            <option value="TC">Turks & Caicos Islands</option>
-            <option value="TV">Tuvalu</option>
-            <option value="UM">U.S. Outlying Islands</option>
-            <option value="VI">U.S. Virgin Islands</option>
-            <option value="UG">Uganda</option>
-            <option value="UA">Ukraine</option>
-            <option value="AE">United Arab Emirates</option>
-            <option value="GB">United Kingdom</option>
-            <option value="US">United States</option>
-            <option value="UY">Uruguay</option>
-            <option value="UZ">Uzbekistan</option>
-            <option value="VU">Vanuatu</option>
-            <option value="VA">Vatican City</option>
-            <option value="VE">Venezuela</option>
-            <option value="VN">Vietnam</option>
-            <option value="WF">Wallis & Futuna</option>
-            <option value="001">world</option>
-            <option value="YE">Yemen</option>
-            <option value="ZM">Zambia</option>
-            <option value="ZW">Zimbabwe</option>
-          </select>
-        </div>
-
-        <div class="form-field form-field--consent">
-          <label class="consent-label">
-            <input type="checkbox" name="consent" required id="consent-primary"
-              aria-describedby="consent-primary-error">
-            <span>I agree to the processing of my data as described in the
-              <button type="button" class="privacy-toggle" aria-expanded="false"
-                aria-controls="privacy-notice-dialog">Privacy Notice</button>
-              to participate in the Agents Reliability Challenge.
-            </span>
-          </label>
-          <span class="field-error" id="consent-primary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <button type="submit" class="btn btn--primary btn--full-width" id="submit-primary">
-          Register
-        </button>
-      </form>
-
-      <div id="confirm-primary" class="submission-confirm" hidden role="status" aria-live="polite">
-        <h3>You're registered.</h3>
-        <p>Check your email (<strong data-confirm-email></strong>) for a confirmation with next steps.</p>
-        <nav class="post-register-links">
-          <a href="https://discord.com/channels/1490619158940090469/" class="btn btn--secondary" target="_blank"
-            rel="noopener" data-track="discord_link_click">Join the Discord &#8594;</a>
-          <a href="https://github.com/" class="btn btn--secondary" target="_blank" rel="noopener"
-            data-track="github_link_click">Explore the SDK on GitHub &#8594;</a>
-        </nav>
-      </div>
-
-      <div class="activation-links" id="activation-links-primary">
-        <a href="https://discord.com/channels/1490619158940090469/" class="activation-link" target="_blank"
-          rel="noopener" data-track="discord_link_click">
-          Join the Discord &#8594;
-          <span class="activation-link__desc">Ask questions, form teams, get help during warm-up.</span>
-        </a>
-        <a href="https://github.com/" class="activation-link" target="_blank" rel="noopener"
-          data-track="github_link_click">
-          Explore the SDK &amp; starter templates on GitHub &#8594;
-          <span class="activation-link__desc">Python SDK, example agent, documentation, starter templates for popular
-            frameworks.</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
   <!-- PARTNER LOGO BAR (between Sections 7 and 8) -->
-  <div class="partner-bar">
+  <div class="partner-bar section--transition">
     <p class="partner-bar__heading">Supported by industry and ecosystem partners</p>
     <div class="partner-logos">
       <div class="partner-logo-frame">
-        <img src="assets/partner-logos/ADNOC_Gas.svg" alt="ADNOC Gas" class="partner-logo partner-logo--adnoc">
+        <img src="assets/partner-logos/summit.jpg" alt="Summit Petroleum" class="partner-logo partner-logo--summit"
+          loading="lazy" decoding="async">
       </div>
       <div class="partner-logo-frame">
-        <img src="assets/partner-logos/blng-logo.png" alt="Brunei LNG" class="partner-logo partner-logo--blng">
+        <img src="assets/partner-logos/nexus.jpg" alt="Nexus Oil" class="partner-logo partner-logo--nexus"
+          loading="lazy" decoding="async">
       </div>
       <div class="partner-logo-frame">
-        <img src="assets/partner-logos/logo_bsp_sm.png" alt="Brunei Shell Petroleum"
-          class="partner-logo partner-logo--bsp">
+        <img src="assets/partner-logos/nova_petro_logo.png" alt="NovaPetro" class="partner-logo partner-logo--nova"
+          loading="lazy" decoding="async">
       </div>
       <div class="partner-logo-frame">
-        <img src="assets/partner-logos/SPE.png" alt="Society of Petroleum Engineers"
-          class="partner-logo partner-logo--spe">
+        <img src="assets/partner-logos/titan_oil_logo.png" alt="Titan Oil" class="partner-logo partner-logo--titan"
+          loading="lazy" decoding="async">
+      </div>
+      <div class="partner-logo-frame">
+        <img src="assets/partner-logos/vanguard_energy_logo.png" alt="Vanguard Energy"
+          class="partner-logo partner-logo--vanguard" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
 
-  <!-- Sentinel for scroll-aware Register button -->
-  <div id="register-switch-point"></div>
-
-
   <!-- SECTION 8 &mdash; For Industry Professionals & AI Practitioners -->
-  <section id="industry" class="section section--alt">
+  <section id="industry" class="section section--alt section--industry">
     <div class="container">
-      <h2 class="section__heading">For Industry Professionals & AI Practitioners</h2>
+      <p class="section-kicker">For Enterprise Teams</p>
+      <h2 class="section__heading section-header">For Industry Professionals & AI Practitioners</h2>
 
       <!-- 8a: Orienting block (max 60 words) -->
       <div class="section-intro section-intro--bordered">
-        <p>The Agents Reliability Challenge is a global online challenge where AI builders construct autonomous agents
+        <p class="section-intro__content">The Agents Reliability Challenge is a global online challenge where AI
+          builders construct autonomous agents
           that operate in a simulated enterprise environment &mdash; creating records, enforcing policies, managing
           workflows, and knowing when to refuse unauthorised actions. Agents are evaluated automatically on accuracy,
           reliability, and efficiency.</p>
@@ -801,8 +729,9 @@
       <div class="enterprise-groups">
         <!-- 8b: Value for practitioners -->
         <div class="enterprise-group">
-          <div class="enterprise-group__heading">For Practitioners</div>
-          <ul>
+          <div class="enterprise-group__eyebrow">For Practitioners</div>
+          <h3 class="enterprise-group__value">Build modern agent capability in an enterprise-realistic setting.</h3>
+          <ul class="enterprise-group__list">
             <li>Hands-on exposure to modern agent architectures in a realistic environment you understand</li>
             <li>Low-risk way to test skills against the global AI community</li>
             <li>Structured onboarding with guided warm-up, SDK, and starter templates</li>
@@ -813,8 +742,9 @@
 
         <!-- 8c: Value for leadership -->
         <div class="enterprise-group">
-          <div class="enterprise-group__heading">For Leadership</div>
-          <ul>
+          <div class="enterprise-group__eyebrow">For Leadership</div>
+          <h3 class="enterprise-group__value">Evaluate agent readiness through scored performance evidence.</h3>
+          <ul class="enterprise-group__list">
             <li>See what autonomous agents can realistically handle in enterprise environments &mdash; through evaluated
               results, not slide decks</li>
             <li>Concrete benchmark data: which agent architectures work, which fail, what's ready for deployment</li>
@@ -825,35 +755,32 @@
       </div>
 
       <!-- 8d: Participation modes &mdash; collapsible -->
-      <details class="collapsible mt-section" id="participation-modes">
-        <summary class="collapsible__trigger">
+      <details class="collapsible accordion mt-section participation-options" id="participation-modes">
+        <summary class="collapsible__trigger participation-options__trigger">
           See all participation options
           <span class="collapsible__icon" aria-hidden="true"></span>
         </summary>
         <div class="collapsible__body">
           <div class="participation-mode">
             <div class="participation-mode__title">Active participation</div>
-            <p>Internal teams enter the challenge directly &mdash; build and submit an agent.</p>
+            <p>Enter the challenge directly, as solo AI practitioner, or as Company's team &mdash; build agent and test
+              it. Team up with external AI builders if you want.</p>
           </div>
           <div class="participation-mode">
-            <div class="participation-mode__title">Mixed teams</div>
-            <p>Pair internal practitioners with external AI builders for cross-pollination.</p>
+            <div class="participation-mode__title">Sponsor or host</div>
+            <p>Support the challenge through sponsorship (flexible options) or host a local participation session
+              enabling closer engagement with builders, practitioners, and post-challenge insights.</p>
           </div>
           <div class="participation-mode">
-            <div class="participation-mode__title">Observers</div>
-            <p>Follow the challenge, review results and leaderboards, assess the state of the art.</p>
+            <div class="participation-mode__title">Meet proven builders</div>
+            <p>Connect with AI builders who have demonstrated enterprise-grade agent skills through scored performance.
+            </p>
           </div>
           <div class="participation-mode">
-            <div class="participation-mode__title">Judges &amp; advisors</div>
-            <p>Contribute domain expertise to task design or special nomination evaluation.</p>
-          </div>
-          <div class="participation-mode">
-            <div class="participation-mode__title">Sponsors &amp; local hosts</div>
-            <p>Support the challenge through sponsorship or host a local participation event.</p>
-          </div>
-          <div class="participation-mode">
-            <div class="participation-mode__title">Recruiters</div>
-            <p>Access a pool of AI builders who have demonstrated enterprise-grade agent skills.</p>
+            <div class="participation-mode__title">Observe for now</div>
+            <p>Follow the challenge, track the leaderboards, request report and see what frontier agents can actually do
+              under
+              enterprise constraints.</p>
           </div>
         </div>
       </details>
@@ -861,25 +788,25 @@
       <!-- 8e: Enterprise CTA -->
       <div class="mt-section">
         <a href="#register-secondary" class="btn btn--primary" data-track="enterprise_cta_click"
-          data-cta-id="industry_register_team_secondary">Register Your Team</a>
+          data-cta-id="industry_register_team_primary">Register Your Team</a>
         <p class="cta-note">
           Partnership or sponsorship inquiries: <a
-            href="mailto:contact@ai-agents-challenge.digital">contact@ai-agents-challenge.digital</a>
+            href="mailto:contact@ai-solutions.digital">contact@ai-solutions.digital</a>
         </p>
       </div>
 
     </div>
   </section>
 
-
   <!-- SECTION 9 &mdash; FAQ -->
   <section id="faq" class="section section--tight">
     <div class="container">
-      <h2 class="section__heading">Frequently Asked Questions</h2>
+      <p class="section-kicker">FAQ</p>
+      <h2 class="section__heading section-header">Frequently Asked Questions</h2>
 
       <div class="faq-list">
 
-        <details class="faq-item" id="faq-1">
+        <details class="faq-item accordion" id="faq-1">
           <summary class="faq-item__question">Do I need oil &amp; gas industry experience?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -890,7 +817,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-2">
+        <details class="faq-item accordion" id="faq-2">
           <summary class="faq-item__question">What programming language or framework should I use?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -901,7 +828,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-3">
+        <details class="faq-item accordion" id="faq-3">
           <summary class="faq-item__question">Can I participate as an individual or do I need a team?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -911,7 +838,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-4">
+        <details class="faq-item accordion" id="faq-4">
           <summary class="faq-item__question">How is my agent evaluated?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -922,7 +849,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-5">
+        <details class="faq-item accordion" id="faq-5">
           <summary class="faq-item__question">What does "policy enforcement" mean in the challenge?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -933,7 +860,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-6">
+        <details class="faq-item accordion" id="faq-6">
           <summary class="faq-item__question">What's the time commitment?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -943,7 +870,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-7">
+        <details class="faq-item accordion" id="faq-7">
           <summary class="faq-item__question">Is there a cost to participate?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -952,7 +879,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-8">
+        <details class="faq-item accordion" id="faq-8">
           <summary class="faq-item__question">What do I win?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -964,7 +891,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-9">
+        <details class="faq-item accordion" id="faq-9">
           <summary class="faq-item__question">I work at an energy company &mdash; how can my team participate?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -975,7 +902,7 @@
           </div>
         </details>
 
-        <details class="faq-item" id="faq-10">
+        <details class="faq-item accordion" id="faq-10">
           <summary class="faq-item__question">When does it start?
             <span class="faq-item__question-icon" aria-hidden="true"></span>
           </summary>
@@ -990,95 +917,102 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
 
-  <!-- SECTION 10 &mdash; REGISTRATION FORM (SECONDARY / COMPACT) -->
-  <section id="register-secondary" class="section section--form section--form-compact">
+  <!-- SECTION 10 &mdash; REGISTRATION FORM (SECONDARY) -->
+  <section id="register-secondary" class="section section--form section--secondary-form">
     <div class="container">
-      <h2 class="section__heading">Enter the first edition of Agents Reliability Challenge</h2>
-      <p class="section__subtext">Join 100+ builders testing agents under real constraints.</p>
+      <p class="section-kicker">Final Step</p>
+      <h2 class="section__heading section-header">Join the Challenge</h2>
 
-      <div class="json-workflow json-workflow--compact" aria-live="polite">
-        <p class="json-workflow__title">Use the same JSON source file</p>
-        <p class="json-workflow__text">Current source file: <strong data-json-file>registrations.json</strong></p>
-        <label class="json-workflow__label" for="json-load-secondary">Load current JSON</label>
-        <input id="json-load-secondary" type="file" accept=".json,application/json" data-json-load-input>
-        <p class="json-workflow__status" data-json-status></p>
-      </div>
+      <div class="registration-layout registration-layout--form-left">
+        <div class="registration-form-surface">
+          <details class="collapsible accordion registration-advanced">
+            <summary class="collapsible__trigger">
+              Already have a saved registration JSON?
+              <span class="collapsible__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="collapsible__body">
+              <div class="json-workflow" aria-live="polite">
+                <p class="json-workflow__title">Local JSON workflow</p>
+                <p class="json-workflow__text">Current source file: <strong data-json-file>registrations.json</strong>
+                </p>
+                <label class="json-workflow__label" for="json-load-secondary">Load current JSON</label>
+                <input id="json-load-secondary" type="file" accept=".json,application/json" data-json-load-input>
+                <p class="json-workflow__status" data-json-status></p>
+              </div>
+            </div>
+          </details>
 
-      <form id="form-secondary" class="reg-form reg-form--compact" novalidate data-form-instance="secondary">
-        <div class="honeypot-wrapper" aria-hidden="true">
-          <input type="text" name="website" tabindex="-1" autocomplete="off">
+          <form id="form-secondary" class="reg-form" novalidate data-form-instance="secondary">
+            <div class="honeypot-wrapper" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="form_rendered_at" id="form-secondary-rendered-at">
+
+            <div class="form-field">
+              <label for="name-secondary">Full name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name-secondary" name="full_name" required autocomplete="name" minlength="2"
+                aria-describedby="name-secondary-error">
+              <span class="field-error" id="name-secondary-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="email-secondary">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email-secondary" name="email" required autocomplete="email"
+                aria-describedby="email-secondary-error">
+              <span class="field-error" id="email-secondary-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="country-secondary">Country <span class="optional-label">(optional)</span></label>
+              <select id="country-secondary" name="country" autocomplete="country">
+                <option value="">Select country</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field--consent">
+              <label class="consent-label">
+                <input type="checkbox" name="consent" required id="consent-secondary"
+                  aria-describedby="consent-secondary-error">
+                <span>I agree to the processing of my data as described in the
+                  <button type="button" class="privacy-toggle" aria-expanded="false"
+                    aria-controls="privacy-notice-dialog">Privacy Notice</button>
+                  to participate in the Agents Reliability Challenge.
+                </span>
+              </label>
+              <span class="field-error" id="consent-secondary-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full-width" id="submit-secondary">
+              Register
+            </button>
+          </form>
+
+          <div id="confirm-secondary" class="submission-confirm" hidden role="status" aria-live="polite">
+            <h3>You're registered.</h3>
+            <p>Check your email (<strong data-confirm-email></strong>) for your unique access link and next steps.</p>
+            <nav class="post-register-links">
+              <a href="https://discord.com/channels/1490619158940090469/" class="btn btn--secondary" target="_blank"
+                rel="noopener" data-track="discord_link_click">Join the Discord &#8594;</a>
+              <a href="https://github.com/" class="btn btn--secondary" target="_blank" rel="noopener"
+                data-track="github_link_click">Explore the SDK on GitHub &#8594;</a>
+            </nav>
+          </div>
         </div>
-        <input type="hidden" name="form_rendered_at" id="form-secondary-rendered-at">
 
-        <div class="form-field">
-          <label for="name-secondary">Full name <span aria-hidden="true">*</span></label>
-          <input type="text" id="name-secondary" name="full_name" required autocomplete="name" minlength="2"
-            aria-describedby="name-secondary-error">
-          <span class="field-error" id="name-secondary-error" role="alert" aria-live="polite"></span>
+        <div id="activation-links-secondary" class="registration-copy info-card">
+          <h3>What happens next</h3>
+          <ul class="registration-points">
+            <li>Receive email invite to Challenge platform with a unique access link (tokenized)</li>
+            <li>Review onboarding tasks and start practicing</li>
+            <li>Join the Discord to discuss tasks, issues and solutions with peers</li>
+            <li>On the day of Challenge full tasks list will be released and agents can start solving them</li>
+          </ul>
         </div>
-
-        <div class="form-field">
-          <label for="email-secondary">Email <span aria-hidden="true">*</span></label>
-          <input type="email" id="email-secondary" name="email" required autocomplete="email"
-            aria-describedby="email-secondary-error">
-          <span class="field-error" id="email-secondary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <div class="form-field">
-          <label for="password-secondary">Password <span aria-hidden="true">*</span></label>
-          <input type="password" id="password-secondary" name="password" required minlength="8"
-            autocomplete="new-password" aria-describedby="password-secondary-hint password-secondary-error">
-          <span class="field-hint" id="password-secondary-hint">Minimum 8 characters</span>
-          <span class="field-error" id="password-secondary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <div class="form-field form-field--consent">
-          <label class="consent-label">
-            <input type="checkbox" name="consent" required id="consent-secondary"
-              aria-describedby="consent-secondary-error">
-            <span>I agree to the processing of my data as described in the
-              <button type="button" class="privacy-toggle" aria-expanded="false"
-                aria-controls="privacy-notice-dialog">Privacy Notice</button>
-              to participate in the Agents Reliability Challenge.
-            </span>
-          </label>
-          <span class="field-error" id="consent-secondary-error" role="alert" aria-live="polite"></span>
-        </div>
-
-        <button type="submit" class="btn btn--primary btn--full-width" id="submit-secondary">
-          Register
-        </button>
-
-      </form>
-
-      <div id="confirm-secondary" class="submission-confirm" hidden role="status" aria-live="polite">
-        <h3>You're registered.</h3>
-        <p>Check your email (<strong data-confirm-email></strong>) for a confirmation with next steps.</p>
-        <nav class="post-register-links">
-          <a href="https://discord.com/channels/1490619158940090469/" class="btn btn--secondary" target="_blank"
-            rel="noopener" data-track="discord_link_click">Join the Discord &#8594;</a>
-          <a href="https://github.com/" class="btn btn--secondary" target="_blank" rel="noopener"
-            data-track="github_link_click">Explore the SDK on GitHub &#8594;</a>
-        </nav>
-      </div>
-
-      <div class="activation-links" id="activation-links-secondary">
-        <a href="https://discord.com/channels/1490619158940090469/" class="activation-link" target="_blank"
-          rel="noopener" data-track="discord_link_click">
-          Join the Discord &#8594;
-          <span class="activation-link__desc">Ask questions, form teams, get help during warm-up.</span>
-        </a>
-        <a href="https://github.com/" class="activation-link" target="_blank" rel="noopener"
-          data-track="github_link_click">
-          Explore the SDK &amp; starter templates on GitHub &#8594;
-          <span class="activation-link__desc">Python SDK, example agent, documentation, starter templates for popular
-            frameworks.</span>
-        </a>
       </div>
     </div>
   </section>
-
 
   <!-- SECTION 11 &mdash; FOOTER -->
   <footer class="footer">
@@ -1089,13 +1023,12 @@
       </div>
 
       <div class="footer__social">
-        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://discord.com/channels/1490619158940090469/" target="_blank" rel="noopener">Discord</a>
         <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
       </div>
 
       <div class="footer__links">
-        <a href="mailto:contact@ai-agents-challenge.digital">Contact</a>
+        <a href="mailto:contact@ai-solutions.digital">Contact</a>
         <button type="button" class="privacy-toggle" aria-expanded="false" aria-controls="privacy-notice-dialog">Privacy
           Notice</button>
       </div>
@@ -1104,25 +1037,18 @@
     </div>
   </footer>
 
-  <!-- JS &mdash; order matters: scroll.js exposes globals used by others -->
-  <script src="js/analytics.js"></script>
-  <script src="js/scroll.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/collapsibles.js"></script>
-  <script src="js/form.js"></script>
-
   <!-- Shared privacy notice dialog -->
   <dialog id="privacy-notice-dialog" class="privacy-dialog" aria-labelledby="privacy-dialog-heading">
     <div class="privacy-dialog__inner">
       <div class="privacy-dialog__header">
-        <h4 id="privacy-dialog-heading">Privacy Notice — Agents Reliability Challenge Registration</h4>
+        <h4 id="privacy-dialog-heading">Privacy Notice &mdash; Agents Reliability Challenge Registration</h4>
         <button type="button" class="privacy-dialog__close" aria-label="Close privacy notice">&times;</button>
       </div>
       <div class="privacy-dialog__body">
         <p><strong>Who we are:</strong> The Agents Reliability Challenge (ARC) is operated by ARC. Contact: <a
-            href="mailto:contact@ai-agents-challenge.digital">contact@ai-agents-challenge.digital</a>.</p>
-        <p><strong>What we collect:</strong> Your name, email address, and password when you register. Optionally, your
-          country. Additional profile information you choose to provide after registration.</p>
+            href="mailto:contact@ai-solutions.digital">contact@ai-solutions.digital</a>.</p>
+        <p><strong>What we collect:</strong> Your name and email address when you register. Country is optional.
+          Additional profile information may be provided after registration.</p>
         <p><strong>Why we collect it:</strong> To create your participant account, grant access to the challenge
           environment, communicate with you about the challenge, display your name on leaderboards if you participate,
           and analyze aggregate participation patterns to improve the challenge.</p>
@@ -1134,16 +1060,569 @@
           12 months afterward. You can request deletion at any time.</p>
         <p><strong>Your rights:</strong> You can request access, correction, deletion, or a portable copy of your data,
           and you can withdraw consent at any time by contacting <a
-            href="mailto:contact@ai-agents-challenge.digital">contact@ai-agents-challenge.digital</a>.</p>
-        <p><strong>Security:</strong> In production, passwords are stored using one-way hashing and registration data is
-          transmitted over encrypted connections. This local prototype stores test submissions in browser storage for
-          design iteration only.</p>
+            href="mailto:contact@ai-solutions.digital">contact@ai-solutions.digital</a>.</p>
+        <p><strong>Security:</strong> Registration data is transmitted over encrypted connections in production. Access
+          is
+          delivered by a unique email link that contains a token. This local prototype stores test submissions in
+          browser
+          storage for design iteration only.</p>
         <p><strong>Cookies:</strong> The registration form uses no tracking cookies. Site analytics follow the website
           analytics approach.</p>
       </div>
     </div>
   </dialog>
 
+  <script>
+    /* analytics.js */
+    /* analytics.js — Phase A: no-op stubs. Phase B: swap for live implementation. */
+
+    window.ARC = window.ARC || {};
+
+    window.ARC.trackEvent = function (name, props) {
+      console.debug('[analytics stub]', name, props);
+    };
+
+    function trackEvent(name, props) {
+      window.ARC.trackEvent(name, props);
+    }
+
+    /* ── Scroll depth events (Intersection Observer) ────────────────────────── */
+    /* Fire once per page load when section first enters viewport at 30% */
+
+    const SECTION_EVENTS = {
+      'how-it-works': 'section_view_how_it_works',
+      'builders': 'section_view_builders',
+      'register': 'section_view_register_primary',
+      'evaluation': 'section_view_evaluation',
+      'industry': 'section_view_industry',
+      'faq': 'section_view_faq',
+      'register-secondary': 'section_view_register_secondary',
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!('IntersectionObserver' in window)) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            if (SECTION_EVENTS[id]) {
+              trackEvent(SECTION_EVENTS[id], { source: window.getAttributionSource ? window.getAttributionSource() : 'direct' });
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      }, { threshold: 0.3 });
+
+      Object.keys(SECTION_EVENTS).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+
+      /* ── Click event delegation ─────────────────────────────────────────── */
+
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-track]');
+        if (!target) return;
+        const eventName = target.getAttribute('data-track');
+        const props = {};
+        if (target.dataset.trackProps) {
+          try { Object.assign(props, JSON.parse(target.dataset.trackProps)); } catch (_) { }
+        }
+        trackEvent(eventName, props);
+      });
+
+      /* ── Page load events ───────────────────────────────────────────────── */
+
+      trackEvent('page_load', {
+        source: window.getAttributionSource ? window.getAttributionSource() : 'direct',
+        has_anchor: !!location.hash,
+      });
+
+      if (location.hash === '#industry') {
+        trackEvent('industry_direct_landing', {
+          source: window.getAttributionSource ? window.getAttributionSource() : 'direct',
+        });
+      }
+    });
+
+    /* scroll.js */
+    /* scroll.js — Hash anchor on load, smooth scroll, attribution capture */
+
+    /* ── Attribution ─────────────────────────────────────────────────────────── */
+
+    const ATTRIBUTION_ANCHORS = { t: 'telegram', li: 'linkedin', wa: 'whatsapp', hn: 'hackernews' };
+
+    let _attributionSource = null;
+
+    function captureAttribution(anchorKey) {
+      _attributionSource = ATTRIBUTION_ANCHORS[anchorKey] || anchorKey;
+    }
+
+    function getAttributionSource() {
+      if (_attributionSource) return _attributionSource;
+
+      // Priority 1: UTM source
+      const params = new URLSearchParams(location.search);
+      if (params.get('utm_source')) return params.get('utm_source');
+
+      // Priority 2: Attribution anchor
+      const hash = location.hash.replace('#', '');
+      if (ATTRIBUTION_ANCHORS[hash]) return ATTRIBUTION_ANCHORS[hash];
+
+      // Priority 3: Referrer hostname
+      if (document.referrer) {
+        try {
+          const ref = new URL(document.referrer).hostname;
+          if (ref.includes('t.me') || ref.includes('telegram')) return 'telegram';
+          if (ref.includes('linkedin.com')) return 'linkedin';
+          if (ref.includes('reddit.com')) return 'reddit';
+          if (ref.includes('news.ycombinator.com')) return 'hackernews';
+          if (ref.includes('twitter.com') || ref.includes('x.com')) return 'twitter';
+        } catch (_) { }
+      }
+
+      return 'direct';
+    }
+
+    // Expose globally so form.js and analytics.js can call it
+    window.getAttributionSource = getAttributionSource;
+
+    /* ── Smooth scroll ───────────────────────────────────────────────────────── */
+
+    function smoothScrollToId(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* ── Attach smooth scroll to all anchor links ────────────────────────────── */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (!href || href === '#') return;
+          const id = href.slice(1);
+
+          // Attribution anchors — do not scroll
+          if (ATTRIBUTION_ANCHORS[id]) return;
+
+          const target = document.getElementById(id);
+          if (target) {
+            e.preventDefault();
+            smoothScrollToId(id);
+          }
+        });
+      });
+    });
+
+    /* ── Initial anchor scroll on page load ─────────────────────────────────── */
+
+    function handleInitialAnchor() {
+      const hash = location.hash.replace('#', '');
+      if (!hash) return;
+
+      // Attribution anchors — capture but do not scroll
+      if (ATTRIBUTION_ANCHORS[hash]) {
+        captureAttribution(hash);
+        // Remove attribution anchor from URL cleanly (no history entry)
+        try {
+          history.replaceState(null, '', location.pathname + location.search);
+        } catch (_) { }
+        return;
+      }
+
+      // Use double-rAF to allow layout to stabilise before scrolling
+      // (Telegram iOS in-app browser can fire scroll before images load)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const target = document.getElementById(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', handleInitialAnchor);
+
+    /* nav.js */
+    /* nav.js - Sticky header, register CTA, hamburger */
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* Hamburger / mobile nav */
+      const hamburger = document.querySelector('.hamburger');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', () => {
+          const isOpen = mobileNav.classList.toggle('is-open');
+          hamburger.setAttribute('aria-expanded', String(isOpen));
+          mobileNav.setAttribute('aria-hidden', String(!isOpen));
+          document.body.classList.toggle('nav-open', isOpen);
+        });
+
+        // Close on link tap
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileNav.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('nav-open');
+          });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+            mobileNav.classList.remove('is-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mobileNav.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('nav-open');
+            hamburger.focus();
+          }
+        });
+      }
+
+      /* Header register button */
+      const navRegisterBtns = document.querySelectorAll('.nav-register-btn');
+      navRegisterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = 'register';
+          if (typeof smoothScrollToId === 'function') {
+            smoothScrollToId(id);
+          } else {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          trackEvent('nav_register_click', { target_form: 'primary' });
+        });
+      });
+
+    });
+
+    /* collapsibles.js */
+    /* collapsibles.js — <details> analytics hooks */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('details[id]').forEach(el => {
+        el.addEventListener('toggle', () => {
+          if (el.open) {
+            trackEvent('collapsible_open', { block_id: el.id });
+          }
+        });
+      });
+    });
+
+    /* form.js */
+    /* form.js - Validation, Phase A JSON file workflow, privacy notice toggle */
+
+    const VALIDATORS = {
+      full_name: (v) =>
+        v.trim().length >= 2 ? null : 'Enter your full name (minimum 2 characters).',
+      email: (v) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? null : 'Enter a valid email address.',
+      consent: (_v, el) =>
+        el.checked ? null : 'You must agree to the Privacy Notice to register.',
+    };
+
+    let loadedRegistrations = null;
+    let loadedFileName = 'registrations.json';
+    let lastRegistrationIntent = null;
+
+    function validateForm(form) {
+      let valid = true;
+      form.querySelectorAll('[name]').forEach(field => {
+        if (!VALIDATORS[field.name]) return;
+        const error = VALIDATORS[field.name](field.value, field);
+        const errorEl =
+          document.getElementById(field.id + '-error') ||
+          form.querySelector(`[id$="${field.name}-error"]`);
+        if (errorEl) errorEl.textContent = error || '';
+        field.setAttribute('aria-invalid', error ? 'true' : 'false');
+        if (error) valid = false;
+      });
+      return valid;
+    }
+
+    function buildRecord(form, instance) {
+      const fd = new FormData(form);
+      const intent = getRegistrationIntent(instance);
+      return {
+        form_instance: instance,
+        full_name: (fd.get('full_name') || '').trim(),
+        email: (fd.get('email') || '').toLowerCase().trim(),
+        country: fd.get('country') || null,
+        cta_button_id: intent.cta_button_id,
+        team_vs_individual: null,
+        audience_segment: null,
+        experience_level: null,
+        consent_given: !!form.querySelector('[name="consent"]').checked,
+        registered_at: new Date().toISOString(),
+        cta_source: intent.cta_source,
+      };
+    }
+
+    function normaliseText(value) {
+      return (value || '')
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '_')
+        .replace(/[^a-z0-9_]/g, '');
+    }
+
+    function resolveCtaSource(link) {
+      if (link.dataset.track) return link.dataset.track;
+
+      const href = link.getAttribute('href');
+      const section = link.closest('section[id], header, footer');
+      const sectionId = section?.id || section?.tagName?.toLowerCase() || 'page';
+      const text = normaliseText(link.textContent);
+      if (href === '#register' || href === '#register-secondary') {
+        return `${sectionId}_${text || 'register_link'}`;
+      }
+      return null;
+    }
+
+    function resolveCtaButtonId(link) {
+      return (link.dataset.ctaId || '').trim() || null;
+    }
+
+    function captureRegistrationIntent(link) {
+      const ctaSource = resolveCtaSource(link);
+      const ctaButtonId = resolveCtaButtonId(link);
+      if (!ctaSource && !ctaButtonId) return;
+
+      lastRegistrationIntent = {
+        cta_button_id: ctaButtonId,
+        cta_source: ctaSource,
+      };
+    }
+
+    function getRegistrationIntent(instance) {
+      if (lastRegistrationIntent) return lastRegistrationIntent;
+      return {
+        cta_button_id: `direct_submit_${instance}`,
+        cta_source: `direct_form_${instance}`,
+      };
+    }
+
+    function showConfirmation(form, email) {
+      const instance = form.dataset.formInstance;
+      const confirmEl = document.getElementById('confirm-' + instance);
+      if (!confirmEl) return;
+
+      const emailEl = confirmEl.querySelector('[data-confirm-email]');
+      if (emailEl) emailEl.textContent = email;
+
+      form.setAttribute('hidden', '');
+      const activationLinks = document.getElementById('activation-links-' + instance);
+      if (activationLinks) activationLinks.setAttribute('hidden', '');
+      confirmEl.removeAttribute('hidden');
+      confirmEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function showFormError(form, _type, message) {
+      let banner = form.querySelector('.form-error-banner');
+      if (!banner) {
+        banner = document.createElement('p');
+        banner.className = 'form-error-banner';
+        banner.setAttribute('role', 'alert');
+        banner.setAttribute('aria-live', 'polite');
+        form.prepend(banner);
+      }
+      banner.textContent = message;
+    }
+
+    function clearErrors(form) {
+      form.querySelectorAll('.field-error').forEach(el => { el.textContent = ''; });
+      form.querySelectorAll('[aria-invalid]').forEach(el => el.removeAttribute('aria-invalid'));
+      const banner = form.querySelector('.form-error-banner');
+      if (banner) banner.remove();
+    }
+
+    function getWorkflowFileName() {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2, '0');
+      const stamp = [
+        now.getFullYear(),
+        pad(now.getMonth() + 1),
+        pad(now.getDate())
+      ].join('-') + '_' + [
+        pad(now.getHours()),
+        pad(now.getMinutes()),
+        pad(now.getSeconds())
+      ].join('-');
+      return `registrations-${stamp}.json`;
+    }
+
+    function syncWorkflowStatus(message, tone = 'info') {
+      document.querySelectorAll('[data-json-status]').forEach((el) => {
+        el.textContent = message;
+        el.dataset.tone = tone;
+      });
+    }
+
+    function syncLoadedFileName(name) {
+      document.querySelectorAll('[data-json-file]').forEach((el) => {
+        el.textContent = name;
+      });
+    }
+
+    function setLoadedRegistrations(data, fileName) {
+      loadedRegistrations = data;
+      loadedFileName = fileName || 'registrations.json';
+      syncLoadedFileName(loadedFileName);
+      syncWorkflowStatus(
+        `Loaded ${loadedRegistrations.length} registrations from ${loadedFileName}. The next submit will append a record and download a new JSON file.`,
+        'success'
+      );
+    }
+
+    function downloadRegistrations(data) {
+      const outputFileName = getWorkflowFileName();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = outputFileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      syncWorkflowStatus(
+        `Downloaded ${outputFileName}. Save or move it into Registration and use that latest file next time.`,
+        'success'
+      );
+    }
+
+    async function handleJsonFileLoad(file) {
+      if (!file) return;
+
+      try {
+        const raw = await file.text();
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed)) {
+          throw new Error('JSON root must be an array of registration records.');
+        }
+        setLoadedRegistrations(parsed, file.name);
+      } catch (err) {
+        loadedRegistrations = null;
+        loadedFileName = 'registrations.json';
+        syncLoadedFileName(loadedFileName);
+        syncWorkflowStatus(
+          `Couldn't load ${file.name}. Use a valid registrations.json array file.`,
+          'error'
+        );
+        console.warn('[Phase A] JSON load failed:', err);
+      }
+    }
+
+    function handleSubmitPhaseA(form, event) {
+      event.preventDefault();
+      clearErrors(form);
+
+      if (!validateForm(form)) return;
+      if (!Array.isArray(loadedRegistrations)) {
+        showFormError(form, 'json', 'Load the current registrations.json file before submitting.');
+        syncWorkflowStatus(
+          'No JSON file loaded yet. Load Registration/registrations.json first.',
+          'error'
+        );
+        return;
+      }
+
+      const instance = form.dataset.formInstance;
+      const data = buildRecord(form, instance);
+      const nextRegistrations = [...loadedRegistrations, data];
+
+      downloadRegistrations(nextRegistrations);
+      setLoadedRegistrations(nextRegistrations, loadedFileName);
+      showConfirmation(form, data.email);
+      lastRegistrationIntent = null;
+      trackEvent('form_submit', { instance, phase: 'A', storage: 'json_download' });
+    }
+
+    function initPrivacyToggles() {
+      const dialog = document.getElementById('privacy-notice-dialog');
+      if (!dialog) return;
+
+      document.querySelectorAll('.privacy-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          dialog.showModal();
+          btn.setAttribute('aria-expanded', 'true');
+        });
+      });
+
+      const closeBtn = dialog.querySelector('.privacy-dialog__close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => dialog.close());
+      }
+
+      dialog.addEventListener('close', () => {
+        document.querySelectorAll('.privacy-toggle').forEach(btn => {
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close on backdrop click
+      dialog.addEventListener('click', e => {
+        if (e.target === dialog) dialog.close();
+      });
+    }
+
+    function initTimingFields() {
+      document.querySelectorAll('.reg-form').forEach(form => {
+        const field = form.querySelector('[name="form_rendered_at"]');
+        if (field) field.value = Date.now().toString();
+      });
+    }
+
+    function initJsonWorkflow() {
+      document.querySelectorAll('[data-json-load-input]').forEach((input) => {
+        input.addEventListener('change', (event) => {
+          const [file] = event.target.files || [];
+          handleJsonFileLoad(file);
+        });
+      });
+
+      syncLoadedFileName(loadedFileName);
+      syncWorkflowStatus(
+        'Load Registration/registrations.json before submitting. Each registration download becomes your new latest source file.',
+        'info'
+      );
+    }
+
+    function syncCountryOptions() {
+      const primary = document.getElementById('country-primary');
+      const secondary = document.getElementById('country-secondary');
+      if (!primary || !secondary) return;
+
+      secondary.innerHTML = primary.innerHTML;
+      secondary.value = '';
+    }
+
+    function initRegistrationIntentCapture() {
+      document.querySelectorAll('a[href="#register"], a[href="#register-secondary"]').forEach((link) => {
+        link.addEventListener('click', () => captureRegistrationIntent(link));
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTimingFields();
+      initPrivacyToggles();
+      initJsonWorkflow();
+      syncCountryOptions();
+      initRegistrationIntentCapture();
+
+      document.querySelectorAll('.reg-form').forEach(form => {
+        form.addEventListener('submit', (e) => handleSubmitPhaseA(form, e));
+      });
+    });
+  </script>
 </body>
 
 </html>

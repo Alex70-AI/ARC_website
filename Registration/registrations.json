@@ -3,7 +3,6 @@
     "form_instance": "secondary",
     "full_name": "Exxon Petroff",
     "email": "exxon@exxon.bn",
-    "password": null,
     "country": null,
     "team_vs_individual": null,
     "audience_segment": null,
@@ -22,7 +21,6 @@
     "form_instance": "secondary",
     "full_name": "pdo-pdo",
     "email": "pdo@pdo.bn",
-    "password": "nopassword123",
     "country": null,
     "cta_button_id": "direct_submit_secondary",
     "team_vs_individual": null,
@@ -37,5 +35,18 @@
     "cta_target_form": "secondary",
     "cta_section_context": "register_secondary",
     "cta_clicked_at": null
+  },
+  {
+    "form_instance": "secondary",
+    "full_name": "Harrison Ford",
+    "email": "harry-best@gmail.bn",
+    "country": "BY",
+    "cta_button_id": "direct_submit_secondary",
+    "team_vs_individual": null,
+    "audience_segment": null,
+    "experience_level": null,
+    "consent_given": true,
+    "registered_at": "2026-04-10T14:05:24.524Z",
+    "cta_source": "direct_form_secondary"
   }
 ]

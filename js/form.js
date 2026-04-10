@@ -5,8 +5,6 @@ const VALIDATORS = {
     v.trim().length >= 2 ? null : 'Enter your full name (minimum 2 characters).',
   email: (v) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? null : 'Enter a valid email address.',
-  password: (v) =>
-    v.length >= 8 ? null : 'Password must be at least 8 characters.',
   consent: (_v, el) =>
     el.checked ? null : 'You must agree to the Privacy Notice to register.',
 };
@@ -37,7 +35,6 @@ function buildRecord(form, instance) {
     form_instance: instance,
     full_name: (fd.get('full_name') || '').trim(),
     email: (fd.get('email') || '').toLowerCase().trim(),
-    password: fd.get('password') || null,
     country: fd.get('country') || null,
     cta_button_id: intent.cta_button_id,
     team_vs_individual: null,
@@ -64,7 +61,7 @@ function resolveCtaSource(link) {
   const section = link.closest('section[id], header, footer');
   const sectionId = section?.id || section?.tagName?.toLowerCase() || 'page';
   const text = normaliseText(link.textContent);
-  if (href === '#register' || href === '#register-secondary') {
+  if (href === '#register') {
     return `${sectionId}_${text || 'register_link'}`;
   }
   return null;
@@ -88,8 +85,8 @@ function captureRegistrationIntent(link) {
 function getRegistrationIntent(instance) {
   if (lastRegistrationIntent) return lastRegistrationIntent;
   return {
-    cta_button_id: instance === 'primary' ? 'direct_submit_primary' : 'direct_submit_secondary',
-    cta_source: instance === 'primary' ? 'direct_form_primary' : 'direct_form_secondary',
+    cta_button_id: 'direct_submit_primary',
+    cta_source: 'direct_form_primary',
   };
 }
 
@@ -280,7 +277,7 @@ function initJsonWorkflow() {
 }
 
 function initRegistrationIntentCapture() {
-  document.querySelectorAll('a[href="#register"], a[href="#register-secondary"]').forEach((link) => {
+  document.querySelectorAll('a[href="#register"]').forEach((link) => {
     link.addEventListener('click', () => captureRegistrationIntent(link));
   });
 }

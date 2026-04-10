@@ -11,9 +11,9 @@
 
 This spec covers two phases. The distinction matters because it determines what gets built now vs. what gets built when the site goes live.
 
-**Phase A — Local Prototype (current phase).** The website lives in a folder on a local machine. The registration form is a working HTML form that logs submissions to a local JSON file (`registrations.json`) in the same folder. No server, no network, no backend. The purpose is to iterate on design, copy, and form behavior until everything is right. Phase A implements: form fields and client-side validation (Section 1), visual form layout including consent checkbox and privacy notice (Section 2), on-page confirmation message on submit (Section 3), and JSON file logging (Section 4). Phase A does not implement: confirmation emails, server-side validation, password hashing, rate limiting, bot mitigation, email uniqueness enforcement, or any feature that requires a server.
+**Phase A — Local Prototype (current phase).** The website lives in a folder on a local machine. The registration form is a working HTML form that logs submissions to a local JSON file (`registrations.json`) in the same folder. No server, no network, no backend. The purpose is to iterate on design, copy, and form behavior until everything is right. Phase A implements: form fields and client-side validation (Section 1), visual form layout including consent checkbox and privacy notice (Section 2), on-page confirmation message on submit (Section 3), and JSON file logging (Section 4). Phase A does not implement: confirmation emails, server-side validation, unique access-link token generation, rate limiting, bot mitigation, email uniqueness enforcement, or any feature that requires a server.
 
-**Phase B — Deployed site.** The website moves to online hosting. The JSON file is replaced by a real backend (serverless function + database). All production features activate: server-side validation, password hashing, HTTPS, email confirmation, bot mitigation, rate limiting, GDPR data access/deletion endpoints. Phase B is addressed in full in this spec but is not built during local prototyping.
+**Phase B — Deployed site.** The website moves to online hosting. The JSON file is replaced by a real backend (serverless function + database). All production features activate: server-side validation, HTTPS, email delivery of unique access links with tokens, bot mitigation, rate limiting, GDPR data access/deletion endpoints. Phase B is addressed in full in this spec but is not built during local prototyping.
 
 Sections below are marked **[Phase A]** or **[Phase B]** where the distinction affects what to build. Unmarked content applies to both phases.
 
@@ -25,7 +25,7 @@ Sections below are marked **[Phase A]** or **[Phase B]** where the distinction a
 
 Minimum viable data at registration. Collect only what is needed to create an account and contact the registrant. Everything else moves to post-registration profile completion on the ARC platform.
 
-The target: a technically strong person arriving from a Telegram link registers in under 60 seconds. Four fields. No decisions to make. No dropdowns to deliberate over.
+The target: a technically strong person arriving from a Telegram link registers in under 60 seconds. Three fields. No decisions to make. No dropdowns to deliberate over.
 
 ### Registration Fields
 
@@ -33,8 +33,7 @@ The target: a technically strong person arriving from a Telegram link registers 
 |---|-------|----------|------|------------|-----------|
 | 1 | **Full name** | Yes | Text input | Min 2 characters. No character-set restriction (supports non-Latin names). | Identity. Needed for leaderboard display, certificates, and communications. Single field — not split into first/last. Reduces friction, accommodates naming conventions globally. |
 | 2 | **Email** | Yes | Email input | Standard email format validation (client-side + server-side). | Primary contact channel. Account identifier. Used for confirmation, warm-up access credentials, and all challenge communications. |
-| 3 | **Password** | Yes | Password input | Minimum 8 characters. No complexity rules beyond length. | Account access on the ARC platform. Collected at registration so the registrant can log into the platform immediately when warm-up opens, without a separate account-creation step. |
-| 4 | **Country** | Optional | Dropdown (searchable) | ISO 3166-1 country list. "Prefer not to say" as an option. | Useful for understanding geographic distribution, timezone-aware communications, and partner reporting. Optional because it's not essential for participation and adds a decision point. |
+| 3 | **Country** | Optional | Dropdown (searchable) | ISO 3166-1 country list. "Prefer not to say" as an option. | Useful for understanding geographic distribution, timezone-aware communications, and partner reporting. Optional because it's not essential for participation and adds a decision point. |
 
 ### Fields Explicitly Excluded from Registration
 
@@ -94,7 +93,7 @@ Display as an expandable section linked from the consent checkbox. Draft text:
 
 **Who we are:** The Agents Reliability Challenge (ARC) is operated by [OPERATOR ENTITY — to be confirmed]. Contact: [privacy contact email].
 
-**What we collect:** Your name, email address, and password when you register. Optionally, your country. Additional profile information you choose to provide after registration.
+**What we collect:** Your name and email address when you register. Country is optional. Additional profile information you choose to provide after registration.
 
 **Why we collect it:** To create your participant account, grant access to the challenge environment, communicate with you about the challenge (timeline, warm-up access, results), display your name on leaderboards (if you participate), and analyze aggregate participation patterns to improve the challenge.
 
@@ -106,7 +105,7 @@ Display as an expandable section linked from the consent checkbox. Draft text:
 
 **Your rights:** You have the right to access, correct, or delete your personal data. You have the right to withdraw consent at any time — withdrawal does not affect the lawfulness of processing before withdrawal. You have the right to request a copy of your data in a portable format. To exercise any of these rights, contact [privacy contact email].
 
-**Security:** Passwords are stored using one-way hashing (never in plain text). Registration data is stored in [hosting region — to be confirmed] and transmitted over encrypted connections (HTTPS/TLS).
+**Security:** Registration data is stored in [hosting region — to be confirmed] and transmitted over encrypted connections (HTTPS/TLS). Access is provided through a unique email link with a token.
 
 **Cookies:** The registration form uses no tracking cookies. Analytics on the website are [covered in the website privacy/analytics approach — cross-reference Stage 4].
 
@@ -133,14 +132,13 @@ On submit, JavaScript intercepts the form, validates client-side, and appends a 
 {
   "full_name": "entered value",
   "email": "entered value (lowercased)",
-  "password": "entered value (plaintext — local testing only, never in production)",
   "country": "entered value or null",
   "consent_given": true,
   "registered_at": "ISO 8601 timestamp"
 }
 ```
 
-Note: In Phase A, the password is stored in plaintext in the local JSON file. This is acceptable for local design iteration only. Phase B replaces this with server-side hashing — the plaintext password never reaches storage in production.
+Note: In Phase A, registration test data is stored in the local JSON file for design iteration only. In Phase B, access-link token issuance happens server-side.
 
 **Phase A does not implement:** confirmation emails, server-side validation, duplicate email detection, rate limiting, or bot mitigation. These are all Phase B.
 
@@ -175,13 +173,13 @@ Note: In Phase A, the password is stored in plaintext in the local JSON file. Th
 
 | Scenario | User-Facing Message | Technical Note |
 |----------|-------------------|----------------|
-| Duplicate email | "This email is already registered. [Log in →] or [Reset password →]" | 409 Conflict. Return generic message — do not confirm whether the email exists to unauthenticated users (prevents email enumeration). See note below. |
+| Duplicate email | "This email is already registered. Check your inbox for your latest access link." | 409 Conflict. Return generic message — do not confirm whether the email exists to unauthenticated users (prevents email enumeration). See note below. |
 | Validation error (server-side) | Inline field errors matching the issue (e.g., "Enter a valid email address") | 422 Unprocessable Entity. |
 | Rate limited | "Too many registration attempts. Please try again in a few minutes." | 429 Too Many Requests. |
 | Server error | "Something went wrong. Please try again. If it keeps happening, contact [support email]." | 500/502/503. Log the error server-side. |
 | Network error | "Couldn't reach the server. Check your connection and try again." | Client-side detection (fetch failure). |
 
-**Email enumeration note:** The duplicate-email message above reveals that an email is registered. For a technical competition with modest data sensitivity, this is an acceptable tradeoff — it prevents frustration for someone who forgot they registered. If a stricter approach is preferred, return a generic "Check your email for next steps" for all submissions, and send an email to existing addresses saying "You already have an account — [log in here]." This adds complexity to the submission flow and delays feedback for the user. Recommend the simpler approach for Edition 1.
+**Email enumeration note:** The duplicate-email message above reveals that an email is registered. For a technical competition with modest data sensitivity, this is an acceptable tradeoff — it prevents frustration for someone who forgot they registered. If a stricter approach is preferred, return a generic "Check your email for next steps" for all submissions, and send an email to existing addresses saying "You already have access — use your latest link." This adds complexity to the submission flow and delays feedback for the user. Recommend the simpler approach for Edition 1.
 
 ### Post-Submission State
 
@@ -210,7 +208,7 @@ Every registration creates a record with the following fields:
 | `id` | UUID or auto-increment | Generated server-side | Unique identifier. |
 | `full_name` | String (UTF-8) | Form input | As entered. No normalization. |
 | `email` | String | Form input | Normalized to lowercase. Unique constraint. |
-| `password_hash` | String | Derived from form input | One-way hash (bcrypt, argon2, or scrypt). Never store plaintext. |
+| `access_link_last_sent_at` | ISO 8601 datetime (UTC) or null | Generated server-side | Timestamp of the most recent access-link email dispatch. |
 | `country` | String (ISO 3166-1 alpha-2) or null | Form input | Null if not provided. |
 | `consent_given` | Boolean | Derived from checkbox state | Must be `true` for record creation. |
 | `consent_timestamp` | ISO 8601 datetime (UTC) | Generated server-side | When consent was recorded. |
@@ -234,7 +232,7 @@ Recommendation: Option A for Edition 1. Revisit for Edition 2 if invalid-email r
 Regardless of whether the backend is a serverless function (Cloudflare Workers, Vercel Edge Function), an ARC platform endpoint, or a temporary solution:
 
 - **HTTPS only.** No unencrypted transmission of registration data.
-- **Password hashing** happens server-side before storage. Bcrypt with a work factor of 10+ or argon2id. Never log or store the plaintext password.
+- **Access token links** are generated and signed server-side. Tokens must be time-limited and never logged in plaintext.
 - **Email uniqueness** enforced at the storage layer (unique constraint or equivalent).
 - **Consent must be recorded.** A registration without `consent_given: true` and a `consent_timestamp` is invalid.
 - **Data export capability.** Must be able to export all data for a given email address (GDPR data access request). For a temporary solution (spreadsheet), this is trivial. For a database, ensure a query path exists.
@@ -244,9 +242,9 @@ Regardless of whether the backend is a serverless function (Cloudflare Workers, 
 
 If the backend is a temporary solution before ARC platform integration:
 
-- **Spreadsheet (Google Sheets / Airtable):** Do not store password hashes in a spreadsheet. If the temporary backend cannot handle password hashing and secure storage, skip the password field at registration and handle account creation at platform onboarding. In this case, registration becomes a lightweight sign-up (name + email + country + consent) and account credentials are set when the platform is ready.
+- **Spreadsheet (Google Sheets / Airtable):** Avoid as a production registration system because it cannot safely handle tokenized access-link workflows and lifecycle controls.
 - **Email-based collection:** Avoid. Email is not a data store — it creates GDPR compliance risk (data scattered across inboxes with no structured deletion path).
-- **Serverless function writing to a simple database (e.g., Cloudflare D1, Vercel Postgres, Supabase):** Preferred temporary approach. Handles password hashing, uniqueness constraints, and structured data access/deletion.
+- **Serverless function writing to a simple database (e.g., Cloudflare D1, Vercel Postgres, Supabase):** Preferred temporary approach. Handles secure access-link token issuance, uniqueness constraints, and structured data access/deletion.
 
 ---
 
@@ -330,7 +328,7 @@ This spec defines **what** the form does and **why**. It does not define **how**
 
 **Phase A (local prototype) builds:** HTML form with all fields from Section 1, client-side validation, consent checkbox and expandable privacy notice, on-page confirmation message, and JSON file logging. This is enough to iterate on the complete registration UX without any backend.
 
-**Phase B (deployment) adds:** Everything deferred from Phase A — serverless function, database, password hashing, HTTPS, email confirmation, bot mitigation, rate limiting, GDPR endpoints. The form HTML/CSS/JS from Phase A carries forward; only the submission handler changes.
+**Phase B (deployment) adds:** Everything deferred from Phase A — serverless function, database, HTTPS, access-link email delivery with token issuance, bot mitigation, rate limiting, GDPR endpoints. The form HTML/CSS/JS from Phase A carries forward; only the submission handler changes.
 
 The following are explicitly deferred to Stage 4 (Tech Spec):
 

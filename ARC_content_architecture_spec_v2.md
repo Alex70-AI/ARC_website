@@ -7,39 +7,6 @@
 
 ---
 
-## Revision Log
-
-This revision addresses findings from an independent review of the original Stage 1 spec against the ARC strategic brief. Changes are listed here with rationale; each affected section is revised in full below.
-
-**Required adjustment 1 — "Gap" narrative slot (Section 3):**
-Added a subsection 3b ("Why This Challenge Exists") after the four mandatory collateral points. The brief's "Gap" narrative — the disconnect between frontier AI builders and heavy-industry environments — is the strategic reason the challenge exists. Without an architectural home for it, the copywriter would write Section 3 as a feature grid and miss the problem statement that gives the challenge weight with both cold HN visitors and enterprise leadership. Placed in Section 3 rather than Section 5 because the problem framing should precede the value proposition, not introduce it. Section 5 answers "why should I compete?" — that question only has force if the reader already understands why the challenge exists.
-
-**Required adjustment 2 — Non-monetary incentives (Section 5):**
-Added an explicit content slot for non-monetary incentives (showcases, publication opportunities, follow-on pilot conversations) as a value point in Section 5. The brief calls these out specifically (Section 9) and flags them as landing-page content (Section 16, item 6). Even if the incentives aren't confirmed by launch, the slot needs to exist so the copywriter accounts for it and it can be populated when ready.
-
-**Required adjustment 3 — Section 11 must be a form; Section 8e scrolls down (Sections 8e, 11):**
-Removed Option B (scroll-back button) from Section 11. Section 11 is now defined as a compact inline registration form — not a deferred decision. Removed the scroll-up-to-Section-6 option from Section 8e; the enterprise CTA now scrolls down to Section 11. The review correctly identified that the enterprise path breaks if Section 11 is a scroll-back button: a visitor landing at `/#industry` and scrolling down would eventually hit a CTA that sends them backward past content they've already read. This is architecturally wrong. Locking the decision now prevents the enterprise path from degrading in later stages.
-
-**Required adjustment 4 — Timeline/Key Dates micro-section (Section 4d):**
-Added a dedicated timeline block as Section 4d within "How It Works." Dates are a primary decision factor for the target audience — a builder evaluating whether to register needs to know when this happens. The original spec mentioned dates only in passing (Section 4a step descriptions, Section 6 reinforcement line, FAQ Q10). That's insufficient: there was no scannable, referenceable block a registrant could screenshot or return to. The slot accepts placeholder content ("Dates announced soon — register to be notified") if dates aren't confirmed.
-
-**Required adjustment 5 — Section 8a word-count constraint:**
-Added a ≤60 word constraint to the Section 8a orienting block. The dual-mode constraint (must orient cold enterprise visitors, must not bore scrolling builders) is the hardest copywriting problem on the page. Without a concrete length target, the block will bloat. Sixty words is roughly 3–4 sentences — enough to establish what ARC is, short enough to read in under 10 seconds.
-
-**Recommended adjustment 1 — Section 9 split (Sections 6, 8.5, 9 removed):**
-Accepted with modification. The review recommended moving Discord/GitHub links into Section 6 and repositioning partner logos as a compact bar between Sections 7 and 8. I agree that Discord and GitHub are activation assets that belong near the registration form, and that partner logos serve as a credibility bridge before the enterprise section. However, I'm keeping this as a structural note rather than a full section renumbering — the partner logo bar between Sections 7 and 8 is a visual treatment decision that the designer should make, not a section-level architectural element. The content requirements are updated: Discord/GitHub links move to Section 6, partner logos are repositioned. The old Section 9 is removed as a standalone section.
-
-**Recommended adjustment 2 — Section 3 mobile length flag:**
-Added a mobile content constraint to Section 3: each block's body text must not exceed 2 sentences on mobile. Flagged for Stage 3 copywriter.
-
-**Recommended adjustment 3 — Soft CTA at end of Section 7:**
-Added as Stage 3 copy guidance within Section 7. A text-link "Ready? Register →" after the nominations subsection. Not a full CTA block — just an inline prompt to catch convinced builders in the post-evaluation stretch before Section 8.
-
-**Recommended adjustment 4 — In-app browser testing for `/#industry`:**
-Added to Stage 5 notes. The `/#industry` hash anchor must be tested in Telegram, LinkedIn, and WhatsApp in-app browsers, with JS-based scroll-on-load as a fallback if native hash anchors are unreliable.
-
----
-
 ## 0. Structural Principles
 
 Before the section inventory, three principles that govern every decision below.
@@ -455,7 +422,7 @@ FAQ items should be derived from the brief's positioning and risk mitigation. Mi
 ### Content Requirements
 
 - **CTA headline:** Different from Section 6 to avoid feeling repetitive. Oriented toward closure: "Join 100+ builders testing agents under real constraints" or "Don't miss Edition 1."
-- **Compact inline registration form.** A minimal version of the registration form. The Stage 2 spec defines the full field set (name, email, password, optional country); this placement may use a subset (name + email) with a link to "complete your registration" for remaining fields, or the full field set if the form is short enough. The Stage 2 spec governs the exact field selection — but this placement is a form, not a button.
+- **Compact inline registration form.** A minimal version of the registration form. The Stage 2 spec defines the full field set (name, email, optional country); this placement may use a subset (name + email) with a link to "complete your registration" for remaining fields, or the full field set if the form is short enough. The Stage 2 spec governs the exact field selection — but this placement is a form, not a button.
 
 This is an architectural constraint, not a deferred decision. The enterprise path (Section 8e) depends on a working form below Section 8. A scroll-back button that sends visitors up to Section 6 breaks the `/#industry` direct-landing flow. This form instance must exist.
 
