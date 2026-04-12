@@ -397,7 +397,7 @@ These are not distribution channels — they are infrastructure. Nothing else wo
 
 | Asset | Role | Effort |
 |---|---|---|
-| Landing page (ai-agents-challenge.digital) | Conversion point for all distribution channels. Must work for warm visitors (Telegram/LinkedIn/DM referrals) and cold visitors (HN/Reddit/newsletters). | Medium (one-time) |
+| Landing page (agentreliabilitychallenge.com) | Conversion point for all distribution channels. Must work for warm visitors (Telegram/LinkedIn/DM referrals) and cold visitors (HN/Reddit/newsletters). | Medium (one-time) |
 | GitHub repo (polished, well-documented) | First impression for technical audience. SDK, starter templates, example agent, documentation. Signals seriousness instantly. Enables sharing. | Medium (one-time) |
 | Discord server (seeded) | Community hub, retention mechanism. Seed with 10–20 early participants or advisors before opening publicly. | Low ongoing |
 

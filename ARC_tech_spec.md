@@ -1,7 +1,7 @@
 # ARC Website — Technical Specification
 
 **Stage 4 Deliverable**
-**Site:** ai-agents-challenge.digital
+**Site:** agentreliabilitychallenge.com
 **Format:** Single-page static HTML/JS/CSS, no framework, no build step
 **Date:** April 2026
 **Depends on:** ARC_content_architecture_spec_v2.md, ARC_registration_form_spec.md
@@ -12,7 +12,7 @@
 
 | Item | Value |
 |---|---|
-| Primary domain | ai-agents-challenge.digital |
+| Primary domain | agentreliabilitychallenge.com |
 | Stack | Static HTML + Vanilla JS + CSS (no framework, no build step) |
 | Hosting | DigitalOcean (see Section 10 for platform recommendation) |
 | Backend | Python (FastAPI) — serves static files and handles form POST |
@@ -932,7 +932,7 @@ function trackEvent(name, props) {
 
 ```html
 <!-- In <head> — Phase B only -->
-<script defer data-domain="ai-agents-challenge.digital"
+<script defer data-domain="agentreliabilitychallenge.com"
         src="https://plausible.io/js/script.tagged-events.js"></script>
 ```
 
@@ -1061,10 +1061,10 @@ function getAttributionSource() {
 ```
 
 **Attribution anchor implementation (see also Section 8):** Short URLs for distribution channels:
-- `ai-agents-challenge.digital/#t` → Telegram distribution
-- `ai-agents-challenge.digital/#li` → LinkedIn distribution
-- `ai-agents-challenge.digital/#wa` → WhatsApp distribution
-- `ai-agents-challenge.digital/?utm_source=hackernews` → HN post (UTM works here)
+- `agentreliabilitychallenge.com/#t` → Telegram distribution
+- `agentreliabilitychallenge.com/#li` → LinkedIn distribution
+- `agentreliabilitychallenge.com/#wa` → WhatsApp distribution
+- `agentreliabilitychallenge.com/?utm_source=hackernews` → HN post (UTM works here)
 
 The `#t`, `#li`, `#wa` anchors do not scroll — `scroll.js` detects them as attribution anchors and ignores them for scroll purposes. The attribution value is captured at load time and stored in a module-level variable, persisting through the session.
 
@@ -1084,14 +1084,14 @@ Place in `<head>` of `index.html`:
 <meta name="description" content="Build an agent that operates in a simulated enterprise environment — creating records, enforcing policies, and knowing when to refuse. Scored on accuracy, reliability, and efficiency. Free to enter.">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://ai-agents-challenge.digital/">
+<link rel="canonical" href="https://agentreliabilitychallenge.com/">
 
 <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Telegram) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ai-agents-challenge.digital/">
+<meta property="og:url" content="https://agentreliabilitychallenge.com/">
 <meta property="og:title" content="The first agent challenge that tests whether your agent should act — not just whether it can.">
 <meta property="og:description" content="Build an agent that operates in a simulated enterprise environment. Scored on accuracy, reliability, and efficiency. Free. Any framework, any language.">
-<meta property="og:image" content="https://ai-agents-challenge.digital/assets/og-image.png">
+<meta property="og:image" content="https://agentreliabilitychallenge.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Agents Reliability Challenge — ARC. The first agent challenge that tests whether your agent should act — not just whether it can.">
@@ -1102,7 +1102,7 @@ Place in `<head>` of `index.html`:
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The first agent challenge that tests whether your agent should act — not just whether it can.">
 <meta name="twitter:description" content="Build an agent that operates in a simulated enterprise environment. Scored on accuracy, reliability, and efficiency. Free. Any framework, any language.">
-<meta name="twitter:image" content="https://ai-agents-challenge.digital/assets/og-image.png">
+<meta name="twitter:image" content="https://agentreliabilitychallenge.com/assets/og-image.png">
 <meta name="twitter:image:alt" content="Agents Reliability Challenge — ARC">
 
 <!-- Telegram-specific: no additional tags needed. Telegram reads og: tags.
@@ -1178,7 +1178,7 @@ All section anchors match the v2 spec exactly:
 
 ### `/#industry` Scroll-on-Load Behavior
 
-Enterprise distribution links use `ai-agents-challenge.digital/#industry`. On page load, the browser should scroll to Section 8. Native hash anchor behavior is unreliable in some in-app browsers (Telegram iOS in particular can scroll before images are loaded, landing at the wrong position).
+Enterprise distribution links use `agentreliabilitychallenge.com/#industry`. On page load, the browser should scroll to Section 8. Native hash anchor behavior is unreliable in some in-app browsers (Telegram iOS in particular can scroll before images are loaded, landing at the wrong position).
 
 **JS fallback (always active — even where native hash works, this ensures correct position):**
 
@@ -1241,9 +1241,9 @@ For channels that strip UTM parameters, create redirect short URLs (301 redirect
 
 | Short URL | Destination | Channel |
 |---|---|---|
-| `ai-agents-challenge.digital/t` | `/#t` | Telegram |
-| `ai-agents-challenge.digital/li` | `/#li` | LinkedIn DM/WhatsApp |
-| `ai-agents-challenge.digital/industry` | `/#industry` | Enterprise distribution (partner co-promotion) |
+| `agentreliabilitychallenge.com/t` | `/#t` | Telegram |
+| `agentreliabilitychallenge.com/li` | `/#li` | LinkedIn DM/WhatsApp |
+| `agentreliabilitychallenge.com/industry` | `/#industry` | Enterprise distribution (partner co-promotion) |
 
 These are server-side redirects (Phase B). In Phase A (no server), all links go to the direct URL.
 
@@ -1486,7 +1486,7 @@ No server needed for Phase A. Test registration by submitting the form and check
 #### Prerequisites
 
 - DigitalOcean account
-- Domain `ai-agents-challenge.digital` registered and nameservers pointing to DigitalOcean
+- Domain `agentreliabilitychallenge.com` registered and nameservers pointing to DigitalOcean
 - GitHub repo with the project (App Platform deploys from Git)
 
 #### App Platform Configuration
@@ -1520,9 +1520,9 @@ services:
         type: GENERAL
 
 domains:
-  - domain: ai-agents-challenge.digital
+  - domain: agentreliabilitychallenge.com
     type: PRIMARY
-  - domain: www.ai-agents-challenge.digital
+  - domain: www.agentreliabilitychallenge.com
     type: ALIAS
 ```
 
@@ -1572,14 +1572,14 @@ def write_registrations(records: list) -> None:
 
 #### DNS Configuration
 
-1. In DigitalOcean DNS, add the domain `ai-agents-challenge.digital`.
+1. In DigitalOcean DNS, add the domain `agentreliabilitychallenge.com`.
 2. App Platform provides a CNAME target — add a CNAME record for `www` and an ALIAS/ANAME record for the apex domain (or use DigitalOcean's Load Balancer for apex CNAME if needed).
 3. App Platform provisions SSL automatically via Let's Encrypt within minutes of DNS propagation.
 
 **DNS records:**
 ```
-ai-agents-challenge.digital.     A      <App Platform IP>
-www.ai-agents-challenge.digital. CNAME  <app-name>.ondigitalocean.app.
+agentreliabilitychallenge.com.     A      <App Platform IP>
+www.agentreliabilitychallenge.com. CNAME  <app-name>.ondigitalocean.app.
 ```
 
 #### SSL
@@ -1610,10 +1610,10 @@ run_command: uvicorn server.main:app --host 0.0.0.0 --port $PORT --workers 2
 2. Create new App in DigitalOcean App Platform → connect GitHub repo.
 3. Set build and run commands (or use `.do/app.yaml` for declarative config).
 4. Add environment variables in App Platform dashboard: `ENVIRONMENT=production`, `DO_SPACES_KEY`, `DO_SPACES_SECRET`, `DO_SPACES_BUCKET`, `DO_SPACES_REGION`.
-5. Configure custom domain `ai-agents-challenge.digital`.
+5. Configure custom domain `agentreliabilitychallenge.com`.
 6. Update DNS at domain registrar to point to DigitalOcean nameservers.
 7. Wait for SSL provisioning (typically 5–10 minutes after DNS propagation).
-8. Test: `curl -I https://ai-agents-challenge.digital/` — expect `200 OK`.
+8. Test: `curl -I https://agentreliabilitychallenge.com/` — expect `200 OK`.
 9. Test registration form submission end-to-end.
 10. Test `/#industry` scroll behavior in Telegram and LinkedIn in-app browsers.
 

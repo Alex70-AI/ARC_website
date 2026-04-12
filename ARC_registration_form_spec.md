@@ -1,6 +1,6 @@
 # ARC Registration Form — Design Spec (Stage 2)
 
-**Project:** Agents Reliability Challenge — ai-agents-challenge.digital  
+**Project:** Agents Reliability Challenge — agentreliabilitychallenge.com  
 **Stage:** 2 of 7 (Registration Form Design)  
 **Status:** Draft for review  
 **Dependencies:** ARC Integrated Brief, ARC Website Plan

@@ -1,7 +1,7 @@
 # ARC Website — Content Architecture Spec
 
 **Stage 1 Deliverable (Revised)**
-**Site:** ai-agents-challenge.digital
+**Site:** agentreliabilitychallenge.com
 **Format:** Single scroll page, anchor navigation, static HTML/JS/CSS
 **Date:** April 2026
 
